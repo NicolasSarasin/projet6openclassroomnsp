@@ -18,12 +18,14 @@ function photographerFactory(data) {
         p.textContent = tagline;
         p2.textContent = price + "€/jour";
         p2.style.color = "#929292";
-        link.id = article;
+        link.textContent = id;
+        link.href = photographer.html;
         article.appendChild(img); //Image du photographe
         article.appendChild(h2); //Nom du photographe
         article.appendChild(h1); //Pays + ville du photographe
         article.appendChild(p); //Ce que fait le photographe
         article.appendChild(p2); //Prix par jour (exemple 500€/jour)
+        article.appendChild(link);
         return article;
     }
     return { name, picture, getUserCardDOM };
