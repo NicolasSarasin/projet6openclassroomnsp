@@ -12,6 +12,7 @@ function photographerFactory(data) {
         const h1 = document.createElement("h1"); //Création d'un titre
         const p = document.createElement("p"); //Création d'un paragraphe
         const p2 = document.createElement("p"); //Création d'un paragraphe
+        //const link = document.createElement("a"); //Création d'un lien -> id
         h2.textContent = name;
         h1.textContent = city + ", " + country;
         p.textContent = tagline;
