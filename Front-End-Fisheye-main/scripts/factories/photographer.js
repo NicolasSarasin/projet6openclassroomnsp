@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name, portrait, country, city, tagline, price } = data;
+    const { name, portrait, country, city, tagline, price /*, id*/ } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -24,6 +24,7 @@ function photographerFactory(data) {
         article.appendChild(h1); //Pays + ville du photographe
         article.appendChild(p); //Ce que fait le photographe
         article.appendChild(p2); //Prix par jour (exemple 500€/jour)
+        //link(article)->photographer.html lien vers photographer.html
         return article;
     }
     return { name, picture, getUserCardDOM };
