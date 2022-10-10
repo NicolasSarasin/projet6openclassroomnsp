@@ -22,7 +22,8 @@ function photographerFactory(data) {
         article.appendChild(h1); //Pays + ville du photographe
         article.appendChild(p); //Ce que fait le photographe
         article.appendChild(p2); //Prix par jour (exemple 500€/jour)
-        //h2.link("photographe.html"); //Lien avec titre h2
+        const linkpage2 = h2.link("photographe.html"); //Lien avec titre h2
+        linkpage2 = "<a href>" + h2 + "</a>";
         return article;
     }
     return { name, picture, getUserCardDOM };
