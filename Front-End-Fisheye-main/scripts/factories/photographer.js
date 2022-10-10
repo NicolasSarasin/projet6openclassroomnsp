@@ -12,8 +12,6 @@ function photographerFactory(data) {
         const h1 = document.createElement("h1"); //Création d'un titre
         const p = document.createElement("p"); //Création d'un paragraphe
         const p2 = document.createElement("p"); //Création d'un paragraphe
-        const link = document.createElement("a"); //Création d'un lien -> id
-        link.href = "photographer.html";
         h2.textContent = name;
         h1.textContent = city + ", " + country;
         p.textContent = tagline;
@@ -24,7 +22,8 @@ function photographerFactory(data) {
         article.appendChild(h1); //Pays + ville du photographe
         article.appendChild(p); //Ce que fait le photographe
         article.appendChild(p2); //Prix par jour (exemple 500€/jour)
-        //link.appendChild(img);
+        img.link("photographe.html"); //Lien avec image
+        h2.link("photographe.html"); //Lien avec titre h2
         return article;
     }
     return { name, picture, getUserCardDOM };
