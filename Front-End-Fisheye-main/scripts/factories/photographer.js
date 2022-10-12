@@ -18,7 +18,7 @@ function photographerFactory(data) {
         p.textContent = tagline;
         p2.textContent = price + "€/jour";
         p2.style.color = "#929292";
-        a.textContent = id;
+        a.textContent = id; //lien par id
         a.href = "photographer.html";
         article.appendChild(img); //Image du photographe
         article.appendChild(h2); //Nom du photographe
