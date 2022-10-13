@@ -19,7 +19,7 @@ function photographerFactory(data) {
         p2.textContent = price + "€/jour";
         p.style.color = "black";
         p2.style.color = "#929292";
-        a.href = "photographer.html";
+        a.href = `photographer.html?photographerId=${id}`; //lien par id
         article.appendChild(img); //Image du photographe
         article.appendChild(h2); //Nom du photographe
         article.appendChild(h1); //Pays + ville du photographe
