@@ -30,30 +30,33 @@ window.onload = function () {
 };
 
 function photographersMediaFactory(data) {
+    const label = createElement(label);
+    //label.textContent = "Trier par";
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
     const picture = `assets/images/${image}`;
     const videograme = `assets/images/${video}`;
     function getUserMediaCardDOM() {
         if (window.onload) {
+            const article = document.createElement("article");
+            const img = document.createElement("img");
+            img.setAttribute("src", picture);
+            const video = document.createElement("video");
+            video.setAttribute("src", videograme);
+            const titleMedia = document.createElement("h2");
+            titleMedia.textContent = title;
+            const likeMedia = document.createElement("h2");
+            likeMedia.textContent = likes;
+            article.appendChild(img);
+            article.appendChild(titleMedia);
+            article.appendChild(likeMedia);
         }
-        const article = document.createElement("article");
-        const img = document.createElement("img");
-        img.setAttribute("src", picture);
-        const video = document.createElement("video");
-        video.setAttribute("src", videograme);
-        const titleMedia = document.createElement("h2");
-        titleMedia.textContent = title;
-        const likeMedia = document.createElement("h2");
-        likeMedia.textContent = likes;
-        article.appendChild(titleMedia);
-        article.appendChild(likeMedia);
         return article;
     }
 
-    const dateMedia = date;
+    /*const dateMedia = date;
     const priceMedia = price;
-    const idMedia = id;
+    const idMedia = id;*/
 
     return { getUserMediaCardDOM };
 }
