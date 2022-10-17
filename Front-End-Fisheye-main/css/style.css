@@ -25,7 +25,8 @@ h1 {
     margin-left: 100px;
 }
 
-.photographer_section {
+.photographer_section,
+.mediaSection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
