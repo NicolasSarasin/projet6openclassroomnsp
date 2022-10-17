@@ -63,3 +63,9 @@ h1 {
     object-fit: cover;
     border-radius: 50%;
 }
+
+.mediaSection article h2 {
+    color: #d3573c;
+    font-size: 36px;
+    margin-bottom: 0px;
+}
