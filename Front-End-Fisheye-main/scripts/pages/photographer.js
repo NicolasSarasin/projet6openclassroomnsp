@@ -47,7 +47,7 @@ function photographersMediaFactory(data) {
             titleMedia.textContent = title;
             const likeMedia = document.createElement("h2");
             likeMedia.textContent = likes;
-            article.appendChild(img);
+            //article.appendChild(img);
             article.appendChild(titleMedia);
             article.appendChild(likeMedia);
         }
