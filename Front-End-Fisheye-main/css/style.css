@@ -25,12 +25,16 @@ h1 {
     margin-left: 100px;
 }
 
-.photographer_section,
-.mediaSection {
+.photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
     margin-top: 100px;
+}
+.mediaSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
 }
 .photographer_section a {
     text-decoration: none;
