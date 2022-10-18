@@ -30,7 +30,7 @@ window.onload = function () {
 };
 
 function photographersMediaFactory(data) {
-    const label = createElement(label);
+    //const label = createElement(label);
     //label.textContent = "Trier par";
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
@@ -47,11 +47,11 @@ function photographersMediaFactory(data) {
             titleMedia.textContent = title;
             const likeMedia = document.createElement("h2");
             likeMedia.textContent = likes;
-            //article.appendChild(img);
+            article.appendChild(img);
             article.appendChild(titleMedia);
             article.appendChild(likeMedia);
+            return article;
         }
-        return article;
     }
 
     /*const dateMedia = date;
