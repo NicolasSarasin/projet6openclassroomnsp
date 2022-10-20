@@ -60,6 +60,12 @@ function photographersMediaFactory(data) {
 
     return { getUserMediaCardDOM };
 }
+function photographerFactory(data) {
+    const { name, portrait, country, city, tagline, price, id } = data;
+    const picture = `assets/photographers/${portrait}`;
+    function getUserCardDOM() {}
+    return { name, picture, getUserCardDOM };
+}
 async function displayPhotographer(photographers) {
     const photographersSection = document.querySelector(".photograph-header");
     const photographer = photographers.find(
