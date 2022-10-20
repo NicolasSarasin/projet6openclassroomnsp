@@ -79,9 +79,11 @@ async function displayPhotographer(photographers) {
 async function displayMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
 
-    const mediaModel = photographersMediaFactory(media);
-    const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
-    mediaSection.appendChild(userMediaCardDOM);
+    media.forEach((media) => {
+        const mediaModel = photographersMediaFactory(media);
+        const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
+        mediaSection.appendChild(userMediaCardDOM);
+    });
 }
 async function init() {
     // Récupère les datas des photographes
