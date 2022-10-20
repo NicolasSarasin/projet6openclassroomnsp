@@ -86,3 +86,5 @@ async function init() {
     const { media } = await getPhotographersMedia();
     displayMedia(media);
 }
+
+init();
