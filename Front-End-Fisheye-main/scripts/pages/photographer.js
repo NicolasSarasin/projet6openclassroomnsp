@@ -22,11 +22,11 @@ async function getPhotographersMedia() {
         media: [...media],
     };
 }
-
+let photographerIdentification = null;
 window.onload = function () {
     sP = new URLSearchParams(windows.location.search);
-    const photographerIdentification = sP.get("photographerId");
-    return photographerIdentification;
+    photographerIdentification = sP.get("photographerId");
+    init();
 };
 
 function photographersMediaFactory(data) {
@@ -60,16 +60,17 @@ function photographersMediaFactory(data) {
 
     return { getUserMediaCardDOM };
 }
-async function displayData(photographers) {
+async function displayPhotographer(photographers) {
     const photographersSection = document.querySelector(".photograph-header");
+    const photographer = photographers.find(
+        (item) => item.id == photographerIdentification
+    );
 
-    photographers.forEach((photographer) => {
-        const photographerModel = photographerFactory(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.appendChild(userCardDOM);
-    });
+    const photographerModel = photographerFactory(photographer);
+    const userCardDOM = photographerModel.getUserCardDOM();
+    photographersSection.appendChild(userCardDOM);
 }
-async function displayData(media) {
+async function displayMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
 
     media.forEach((media) => {
@@ -81,9 +82,7 @@ async function displayData(media) {
 async function init() {
     // Récupère les datas des photographes
     const { photographers } = await getPhotographers();
-    displayData(photographers);
+    displayPhotographer(photographers);
     const { media } = await getPhotographersMedia();
-    displayData(media);
+    displayMedia(media);
 }
-
-init();
