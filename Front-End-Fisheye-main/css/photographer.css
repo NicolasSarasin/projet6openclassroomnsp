@@ -50,18 +50,10 @@
 
 form {
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.sort {
     width: 95%;
     padding-left: 100px;
-}
-
-.sort input {
-    background-color: #901c1c;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 form label {
