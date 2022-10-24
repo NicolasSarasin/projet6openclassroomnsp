@@ -48,10 +48,14 @@
     text-align: center;
 }
 
-form {
-    display: flex;
+.sort {
     width: 95%;
     padding-left: 100px;
+}
+
+.modalForm {
+    display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -61,7 +65,7 @@ form label {
     font-size: 36px;
 }
 
-form div {
+.modalForm div {
     display: flex;
     flex-direction: column;
     width: 100%;
