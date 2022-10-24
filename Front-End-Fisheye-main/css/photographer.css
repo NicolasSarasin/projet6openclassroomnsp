@@ -50,10 +50,17 @@
 
 form {
     display: flex;
-    width: 95%;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 100px;
+}
+
+.sort {
+    padding-left: 100%;
+}
+
+.sort input {
+    background-color: #901c1c;
 }
 
 form label {
@@ -72,7 +79,6 @@ form div {
 form input {
     width: 100%;
     height: 68px;
-    background-color: #901c1c;
     border: none;
     border-radius: 5px;
 }
