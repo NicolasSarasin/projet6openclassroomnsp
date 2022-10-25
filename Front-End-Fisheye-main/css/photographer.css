@@ -53,6 +53,10 @@
     padding-left: 100px;
 }
 
+.sort label {
+    font-size: 32px;
+}
+
 .modalForm {
     display: flex;
     width: 100%;
