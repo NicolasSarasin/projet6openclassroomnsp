@@ -48,6 +48,10 @@
     text-align: center;
 }
 
+.imgArticle {
+    height: 100px;
+}
+
 .sort {
     width: 95%;
     padding-left: 100px;
