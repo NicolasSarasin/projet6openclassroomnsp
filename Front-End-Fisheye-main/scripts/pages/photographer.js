@@ -41,13 +41,14 @@ function photographersMediaFactory(data) {
             const article = document.createElement("article");
             const img = document.createElement("img");
             img.setAttribute("src", picture);
+            img.classList.add("imgArticle");
             const video = document.createElement("video");
             video.setAttribute("src", videograme);
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title;
             const likeMedia = document.createElement("h2");
             likeMedia.textContent = likes;
-            //article.appendChild(img);
+            article.appendChild(img);
             article.appendChild(titleMedia);
             article.appendChild(likeMedia);
             return article;
