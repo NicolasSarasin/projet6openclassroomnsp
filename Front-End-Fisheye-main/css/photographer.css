@@ -57,6 +57,7 @@
 .sort {
     width: 95%;
     padding-left: 100px;
+    margin-bottom: 25px;
 }
 
 .sort label {
