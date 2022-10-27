@@ -64,7 +64,16 @@ function photographersMediaFactory(data) {
 function photographerFactory(data) {
     const { name, portrait, country, city, tagline, price, id } = data;
     const picture = `assets/photographers/${portrait}`;
-    function getUserCardDOM() {}
+    function getUserCardDOM() {
+        const article1 = document.createElement("article");
+        const article2 = document.createElement("article");
+        article1.classList.add("article1");
+        article2.classList.add("article2");
+        const img = document.createElement("img");
+        img.setAttribute("src", picture);
+        img.classList.add("imgIDphotographersPage");
+        return; //retourne les deux articles créées
+    }
     return { name, picture, getUserCardDOM };
 }
 async function displayPhotographer(photographers) {
