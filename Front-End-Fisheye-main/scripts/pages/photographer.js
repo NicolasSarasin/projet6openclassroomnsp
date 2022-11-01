@@ -62,7 +62,7 @@ function photographersMediaFactory(data) {
     return { getUserMediaCardDOM };
 }
 function photographerFactory(data) {
-    const { name, country, city, tagline, id } = data;
+    const { name, country, city, tagline } = data;
 
     function getUserCardDOM() {
         const article = document.createElement("article");
