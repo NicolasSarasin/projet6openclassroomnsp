@@ -6,12 +6,18 @@
     background-color: #fafafa;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .contact_button {
     font-size: 20px;
     font-weight: bold;
     color: white;
+    margin-top: 50px;
     padding: 11px;
     width: 170px;
     height: 70px;
@@ -19,6 +25,24 @@
     background-color: #901c1c;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.photographerInfo h1 {
+    color: #d3573c;
+    font-size: 65px;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.photographerInfo h2 {
+    margin-top: 0px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #901c1c;
+}
+
+.photographerInfo p {
+    font-size: 18px;
 }
 
 .imgIDphotographersPage {
