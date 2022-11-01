@@ -18,9 +18,16 @@
         </header>
         <main id="main">
             <div class="photograph-header">
+                <div id="photographerInfo" class="photographerInfo"></div>
                 <button class="contact_button" onclick="displayModal()">
                     Contactez-moi
                 </button>
+                <img
+                    id="photographerPhoto"
+                    class="imgIDphotographersPage"
+                    src="assets/images/logo.png"
+                    alt=""
+                />
             </div>
         </main>
         <form action="" class="sort">
@@ -47,12 +54,14 @@
                 </header>
                 <form class="modalForm">
                     <div>
+                        <label>Nom</label>
+                        <input type="text" />
                         <label>Prénom</label>
                         <input type="text" />
                         <label>Mail</label>
                         <input type="text" />
-                        <label>Message</label>
-                        <input type="textarea" />
+                        <label>Votre message</label>
+                        <input type="text" />
                     </div>
                     <button class="contact_button">Envoyer</button>
                 </form>
