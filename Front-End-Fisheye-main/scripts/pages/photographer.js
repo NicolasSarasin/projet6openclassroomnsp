@@ -96,9 +96,7 @@ function photographerFactory2(data) {
 
 async function displayPhotographer(photographers) {
     const photographersSection = document.querySelector(".photographerInfo");
-    const photographersSection2 = document.querySelector(
-        ".photographer-header"
-    );
+    const photographersSection2 = document.querySelector(".photograph-header");
     const photographer = photographers.find(
         (item) => item.id == photographerIdentification
     );
@@ -126,5 +124,3 @@ async function init() {
     const { media } = await getPhotographersMedia();
     displayMedia(media);
 }
-
-init();
