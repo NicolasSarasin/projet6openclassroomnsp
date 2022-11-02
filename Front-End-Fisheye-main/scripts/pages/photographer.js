@@ -24,7 +24,7 @@ async function getPhotographersMedia() {
 }
 let photographerIdentification = null;
 window.onload = function () {
-    sP = new URLSearchParams(windows.location.search);
+    sP = new URLSearchParams(window.location.search);
     photographerIdentification = sP.get("photographerId");
     init();
 };
@@ -89,7 +89,7 @@ function photographerFactory2(data) {
         img.setAttribute("src", picture);
         img.classList.add("imgIDphotographersPage");
         //article.appendChild(img);
-        return;
+        return /*article*/;
     }
     return { getUserCardDOM2 };
 }
