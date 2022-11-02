@@ -96,7 +96,7 @@ function photographerFactory2(data) {
 
 async function displayPhotographer(photographers) {
     const photographersSection = document.querySelector(".photographerInfo");
-    const photographersSection2 = document.querySelector(".photograph-header");
+    const photographersSection2 = document.getElementById("photographerPhoto");
     const photographer = photographers.find(
         (item) => item.id == photographerIdentification
     );
@@ -105,8 +105,9 @@ async function displayPhotographer(photographers) {
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
     const photographerModel2 = photographerFactory2(photographer);
-    const userCardDOM2 = photographerModel2.getUserCardDOM2();
-    photographersSection2.appendChild(userCardDOM2);
+    //const userCardDOM2 = photographerModel2.getUserCardDOM2();
+    //photographersSection2.appendChild(userCardDOM2);
+    photographersSection2.src = `assets/photographers/${photographer.portrait}`;
 }
 async function displayMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
