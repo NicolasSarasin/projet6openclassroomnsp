@@ -25,7 +25,6 @@
                 <img
                     id="photographerPhoto"
                     class="imgIDphotographersPage"
-                    src="assets/images/logo.png"
                     alt=""
                 />
             </div>
@@ -52,16 +51,28 @@
                     <h2>Contactez-moi</h2>
                     <img src="assets/icons/close.svg" onclick="closeModal()" />
                 </header>
-                <form class="modalForm">
+                <form class="modalForm" name="messageToPhotographe">
                     <div>
-                        <label>Nom</label>
-                        <input type="text" />
                         <label>Prénom</label>
                         <input type="text" />
+                        <div id="firstNameError" class="error">
+                            Le prénom doit contenir deux caractères
+                        </div>
+                        <label>Nom</label>
+                        <input type="text" />
+                        <div id="lastNameError" class="error">
+                            Le nom doit contenir deux caractères
+                        </div>
                         <label>Mail</label>
                         <input type="text" />
+                        <div id="emailError" class="error">
+                            Le mail doit contenir deux caractères
+                        </div>
                         <label>Votre message</label>
                         <input type="text" />
+                        <div id="messageError" class="error">
+                            Le message ne doit pas être vide
+                        </div>
                     </div>
                     <button class="contact_button">Envoyer</button>
                 </form>
