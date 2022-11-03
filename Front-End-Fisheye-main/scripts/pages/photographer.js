@@ -49,6 +49,7 @@ function photographersMediaFactory(data) {
             const likeMedia = document.createElement("h2");
             likeMedia.textContent = likes;
             article.appendChild(img);
+            article.appendChild(video);
             article.appendChild(titleMedia);
             article.appendChild(likeMedia);
             return article;
