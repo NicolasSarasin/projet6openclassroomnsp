@@ -111,9 +111,7 @@ async function displayPhotographer(photographers) {
 }
 async function displayMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
-    const media = media.find(
-        (item) => item.photographerId == photographerIdentification
-    );
+
     media.forEach((media) => {
         const mediaModel = photographersMediaFactory(media);
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
