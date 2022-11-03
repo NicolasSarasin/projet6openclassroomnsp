@@ -122,3 +122,10 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+.error {
+    font-size: 0.8em;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
