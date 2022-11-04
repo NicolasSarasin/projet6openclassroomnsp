@@ -44,7 +44,7 @@ function photographersMediaFactory(data) {
             img.classList.add("imgArticle");
             const video = document.createElement("video");
             video.setAttribute("src", videograme);
-            video.classList.add("imgArticle");
+            video.classList.add("videoArticle");
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
             const likeMedia = document.createElement("h2");
