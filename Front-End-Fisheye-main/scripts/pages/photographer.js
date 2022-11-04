@@ -46,13 +46,13 @@ function photographersMediaFactory(data) {
             video.setAttribute("src", videograme);
             video.classList.add("imgArticle");
             const titleMedia = document.createElement("h2");
-            titleMedia.textContent = title;
-            const likeMedia = document.createElement("h2");
-            likeMedia.textContent = likes;
+            titleMedia.textContent = title + likes; //titre + nombre de likes
+            //const likeMedia = document.createElement("h2");
+            //likeMedia.textContent = likes;
             article.appendChild(img);
             article.appendChild(video);
             article.appendChild(titleMedia);
-            article.appendChild(likeMedia);
+            //article.appendChild(likeMedia);
             return article;
         }
     }
