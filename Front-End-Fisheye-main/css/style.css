@@ -74,4 +74,10 @@ h1 {
     color: #901c1c;
     font-size: 32px;
     margin-bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+}
+.mediaSection article img {
+    height: 300px;
+    width: 300px;
 }
