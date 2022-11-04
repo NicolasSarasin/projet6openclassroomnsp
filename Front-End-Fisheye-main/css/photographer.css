@@ -54,7 +54,8 @@
 
 .videoArticle {
     height: 300px;
-    width: 300px; /*largeur video*/
+    width: 300px;
+    position: relative;
 }
 
 .modal {
