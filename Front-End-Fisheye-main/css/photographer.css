@@ -60,6 +60,7 @@
     height: 300px;
     width: 300px;
     position: absolute;
+    top: 150px;
     cursor: pointer; /*pointeur*/
 }
 
