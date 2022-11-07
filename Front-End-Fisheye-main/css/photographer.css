@@ -60,7 +60,7 @@
     height: 300px;
     width: 300px;
     position: absolute;
-    cursor: pointer;
+    cursor: pointer; /*pointeur*/
 }
 
 .modal {
