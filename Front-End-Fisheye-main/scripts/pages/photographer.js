@@ -37,7 +37,7 @@ function photographersMediaFactory(data) {
     const picture = `assets/images/${image}`;
     const videograme = `assets/images/${video}`;
     function getUserMediaCardDOM() {
-        if (window.onload) {
+        if (photographerId) {
             const article = document.createElement("article");
             const img = document.createElement("img");
             img.setAttribute("src", picture);
