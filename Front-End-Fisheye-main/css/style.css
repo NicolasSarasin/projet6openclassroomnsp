@@ -75,9 +75,10 @@ h1 {
     font-size: 32px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .mediaSection article img {
     height: 300px;
     width: 300px;
+    cursor: pointer;
 }
