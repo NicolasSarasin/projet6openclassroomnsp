@@ -56,7 +56,7 @@
     cursor: pointer; /*pointeur*/
 }
 
-.videoArticle {
+.mediaSection article .videoArticle {
     height: 300px;
     width: 300px;
     position: absolute;
