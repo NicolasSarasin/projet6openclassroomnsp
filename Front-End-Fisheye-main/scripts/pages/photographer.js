@@ -37,24 +37,25 @@ function photographersMediaFactory(data) {
     const picture = `assets/images/${image}`;
     const videograme = `assets/images/${video}`;
     function getUserMediaCardDOM() {
-        if (photographerId) {
-            const article = document.createElement("article");
-            const img = document.createElement("img");
-            img.setAttribute("src", picture);
-            img.classList.add("imgArticle");
-            const video = document.createElement("video");
-            video.setAttribute("src", videograme);
-            video.classList.add("videoArticle");
-            const titleMedia = document.createElement("h2");
-            titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
-            const likeMedia = document.createElement("h2");
-            likeMedia.textContent = likes;
-            article.appendChild(img);
-            article.appendChild(video);
-            article.appendChild(titleMedia);
-            article.appendChild(likeMedia);
-            return article;
-        }
+        //if (photographerId) {
+        const article = document.createElement("article");
+        const img = document.createElement("img");
+        img.setAttribute("src", picture);
+        img.classList.add("imgArticle");
+        //img.onclick(modalis()); //au click de l'image, affiche un modal pour mettre les images en avant
+        const video = document.createElement("video");
+        video.setAttribute("src", videograme);
+        video.classList.add("videoArticle");
+        const titleMedia = document.createElement("h2");
+        titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
+        const likeMedia = document.createElement("h2");
+        likeMedia.textContent = likes;
+        article.appendChild(img);
+        article.appendChild(video);
+        article.appendChild(titleMedia);
+        article.appendChild(likeMedia);
+        return article;
+        //}
     }
 
     /*const dateMedia = date;
@@ -63,6 +64,10 @@ function photographersMediaFactory(data) {
 
     return { getUserMediaCardDOM };
 }
+
+/*modalis(){
+
+}*/
 function photographerFactory(data) {
     const { name, country, city, tagline } = data;
 
