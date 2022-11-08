@@ -63,6 +63,10 @@
     cursor: pointer; /*pointeur*/
 }
 
+.modalis {
+    z-index: 1;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #db8876;
