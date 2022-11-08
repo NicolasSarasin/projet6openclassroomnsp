@@ -42,7 +42,7 @@ function photographersMediaFactory(data) {
         const img = document.createElement("img");
         img.setAttribute("src", picture);
         img.classList.add("imgArticle");
-        //img.onclick(modalis()); //au click de l'image, affiche un modal pour mettre les images en avant
+        img.onclick(modalis()); //au click de l'image, affiche un modal pour mettre les images en avant
         const video = document.createElement("video");
         video.setAttribute("src", videograme);
         video.classList.add("videoArticle");
@@ -65,9 +65,15 @@ function photographersMediaFactory(data) {
     return { getUserMediaCardDOM };
 }
 
-/*modalis(){
+function modalis() {
+    const Modalis = document.querySelector(".modalis");
+    Modalis.style.display = "block";
+}
+function closemodalis() {
+    const Modalis = document.querySelector(".modalis");
+    Modalis.style.display = "none";
+}
 
-}*/
 function photographerFactory(data) {
     const { name, country, city, tagline } = data;
 
