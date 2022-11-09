@@ -37,9 +37,9 @@ function photographersMediaFactory(data) {
     const picture = `assets/images/${image}`;
     const videograme = `assets/images/${video}`;
     function getUserMediaCardDOM() {
-        let photographerID = new URLSearchParams(window.location.search);
-        photographerIdentification = photographerID.get("photographerId");
-        if (photographerID == photographerId) {
+        //let photographerID = new URLSearchParams(window.location.search);
+        //photographerIdentification = photographerID.get("photographerId");
+        if (photographerId) {
             const article = document.createElement("article");
             const img = document.createElement("img");
             img.setAttribute("src", picture);
