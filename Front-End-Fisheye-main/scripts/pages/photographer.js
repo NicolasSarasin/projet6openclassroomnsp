@@ -50,12 +50,9 @@ function photographersMediaFactory(data) {
             video.classList.add("videoArticle");
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
-            const likeMedia = document.createElement("h2");
-            likeMedia.textContent = likes;
             article.appendChild(img);
             article.appendChild(video);
-            article.appendChild(titleMedia);
-            article.appendChild(likeMedia);
+            article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
             return article;
         }
     }
@@ -68,11 +65,11 @@ function photographersMediaFactory(data) {
 }
 
 /*function openmodalis() {
-    const Modalis = document.querySelector(".modalis");
+    const Modalis = document.querySelector(".modalis"); //fonction d'ouvertu du modale 
     Modalis.style.display = "block";
 }
 function closemodalis() {
-    const Modalis = document.querySelector(".modalis");
+    const Modalis = document.querySelector(".modalis"); //fonction de fermeture du modalis
     Modalis.style.display = "none";
 }*/
 
