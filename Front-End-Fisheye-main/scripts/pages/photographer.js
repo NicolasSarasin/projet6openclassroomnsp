@@ -11,7 +11,7 @@ async function getPhotographers() {
     console.log(photographers);
 
     // et bien retourner le tableau photographers seulement une fois
-    return [...photographers];
+    return [...photographers]; //retourne un tableau des photographes
 }
 
 async function getPhotographer(id) {
@@ -25,7 +25,7 @@ async function getPhotographersMedia() {
     console.log(media);
 
     // et bien retourner le tableau media seulement une fois
-    return [...media];
+    return [...media]; //retourne un tableau des médias
 }
 
 async function getPhotgrapherMedia(id) {
@@ -127,7 +127,7 @@ async function displayPhotographer() {
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
-    const photographerModel2 = photographerFactory2(photographer);
+    //const photographerModel2 = photographerFactory2(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
     photographersSection2.src = `assets/photographers/${photographer.portrait}`;
