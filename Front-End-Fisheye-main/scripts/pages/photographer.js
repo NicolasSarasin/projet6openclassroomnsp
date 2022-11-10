@@ -1,27 +1,41 @@
 //Mettre le code JavaScript lié à la page photographer.html
-async function getPhotographers() {
+
+async function getData() {
     const response = await fetch("data/photographers.json");
     const data = await response.json();
-    const photographers = data.photographers;
+    return data;
+}
+
+async function getPhotographers() {
+    const photographers = await getData().photographers;
     console.log(photographers);
 
     // et bien retourner le tableau photographers seulement une fois
-    return {
-        photographers: [...photographers],
-    };
+    return [...photographers];
+}
+
+async function getPhotographer(id) {
+    const photographers = await getPhotographers();
+    const photographer = photographers.find((item) => item.id == id);
+    return photographer;
 }
 
 async function getPhotographersMedia() {
-    const response = await fetch("data/photographers.json");
-    const data = await response.json();
-    const media = data.media;
+    const media = await getData().media;
     console.log(media);
 
     // et bien retourner le tableau media seulement une fois
-    return {
-        media: [...media],
-    };
+    return [...media];
 }
+
+async function getPhotgrapherMedia(id) {
+    const medias = await getPhotographersMedia();
+    const photographerMedia = medias.filter(
+        (item) => item.photographerId == id
+    );
+    return photographerMedia;
+}
+
 let photographerIdentification = null;
 window.onload = function () {
     sP = new URLSearchParams(window.location.search);
@@ -106,13 +120,10 @@ function photographerFactory2(data) {
     return { getUserCardDOM2 };
 }
 
-async function displayPhotographer(photographers) {
+async function displayPhotographer() {
     const photographersSection = document.querySelector(".photographerInfo");
     const photographersSection2 = document.getElementById("photographerPhoto");
-    const photographer = photographers.find(
-        (item) => item.id == photographerIdentification
-    );
-
+    const photographer = await getPhotographer(photographerIdentification);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
@@ -121,19 +132,68 @@ async function displayPhotographer(photographers) {
     //photographersSection2.appendChild(userCardDOM2);
     photographersSection2.src = `assets/photographers/${photographer.portrait}`;
 }
-async function displayMedia(media) {
+const photographerMedia = [];
+async function displayPhotographerMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
-
+    mediaSection.innerHTML = "";
     media.forEach((media) => {
         const mediaModel = photographersMediaFactory(media);
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
     });
 }
+
+function sortByLikes(a, b) {
+    if (a.likes < b.likes) {
+        return -1;
+    }
+    if (a.likes > b.likes) {
+        return 1;
+    }
+    return 0;
+}
+
+function sortByDates(a, b) {
+    if (a.date < b.date) {
+        return -1;
+    }
+    if (a.date > b.date) {
+        return 1;
+    }
+    return 0;
+}
+
+function sortByTitles(a, b) {
+    if (a.title < b.title) {
+        return -1;
+    }
+    if (a.title > b.title) {
+        return 1;
+    }
+    return 0;
+}
+
+function sortMedia(option) {
+    switch (option) {
+        case "popularity": {
+            photographerMedia.sort(sortByLikes);
+            break;
+        }
+        case "date": {
+            photographerMedia.sort(sortByDates);
+            break;
+        }
+        case "title": {
+            photographerMedia.sort(sortByTitles);
+            break;
+        }
+    }
+    displayPhotographerMedia(photographerMedia);
+}
+
 async function init() {
     // Récupère les datas des photographes
-    const { photographers } = await getPhotographers();
-    displayPhotographer(photographers);
-    const { media } = await getPhotographersMedia();
-    displayMedia(media);
+    displayPhotographer();
+    photographerMedia = await getPhotgrapherMedia(photographerIdentification);
+    displayPhotographerMedia(photographerMedia);
 }
