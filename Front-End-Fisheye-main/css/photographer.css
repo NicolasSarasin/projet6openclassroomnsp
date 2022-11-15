@@ -144,3 +144,19 @@ form input {
     font-weight: bold;
     display: none;
 }
+
+.LikesPrice {
+    position: absolute;
+    background-color: #db8876;
+    display: flex;
+    justify-content: space-around;
+    width: 440px;
+    top: 94.7%;
+    left: 78%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.LikesPrice h2 {
+    color: black;
+}
