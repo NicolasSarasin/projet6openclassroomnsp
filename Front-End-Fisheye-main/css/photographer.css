@@ -146,7 +146,7 @@ form input {
 }
 
 .LikesPrice {
-    position: absolute;
+    position: fixed;
     background-color: #db8876;
     display: flex;
     justify-content: space-around;
