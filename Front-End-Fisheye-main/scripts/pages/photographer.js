@@ -7,7 +7,7 @@ async function getData() {
 }
 
 async function getPhotographers() {
-    const photographers = await getData().photographers;
+    const photographers = (await getData()).photographers;
     console.log(photographers);
 
     // et bien retourner le tableau photographers seulement une fois
@@ -21,7 +21,7 @@ async function getPhotographer(id) {
 }
 
 async function getPhotographersMedia() {
-    const media = await getData().media;
+    const media = (await getData()).media;
     console.log(media);
 
     // et bien retourner le tableau media seulement une fois
@@ -48,24 +48,32 @@ function photographersMediaFactory(data) {
     //label.textContent = "Trier par";
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
-    const picture = `assets/images/${image}`;
-    const videograme = `assets/images/${video}`;
+    const picture = assets/images/${image};
+    const videograme = assets/images/${video};
     function getUserMediaCardDOM() {
         //let photographerID = new URLSearchParams(window.location.search);
         //photographerIdentification = photographerID.get("photographerId");
         if (photographerId) {
             const article = document.createElement("article");
-            const img = document.createElement("img");
-            img.setAttribute("src", picture);
-            img.classList.add("imgArticle");
-            //img.setAttribute("onclick=openmodalis()"); //au click de l'image, affiche un modal pour mettre les images en avant
-            const video = document.createElement("video");
-            video.setAttribute("src", videograme);
-            video.classList.add("videoArticle");
+            let mediaElt = null;
+            if(image != null)
+            {
+              mediaElt = document.createElement("img");
+              mediaElt.src = picture;
+              mediaElt.classList.add("imgArticle");
+              article.appendChild(mediaElt);
+            }
+            else
+            {
+              mediaElt = document.createElement("video");
+              mediaElt.setAttribute("src", videograme);
+              mediaElt.classList.add("videoArticle");
+              article.appendChild(mediaElt);
+            }
+            mediaElt.onclick = openmodalis; //au click de l'image, affiche un modal pour mettre les images en avant
+
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
-            article.appendChild(img);
-            article.appendChild(video);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
             return article;
         }
@@ -78,14 +86,15 @@ function photographersMediaFactory(data) {
     return { getUserMediaCardDOM };
 }
 
-/*function openmodalis() {
+function openmodalis() {
     const Modalis = document.querySelector(".modalis"); //fonction d'ouvertu du modale 
     Modalis.style.display = "block";
 }
+
 function closemodalis() {
     const Modalis = document.querySelector(".modalis"); //fonction de fermeture du modalis
     Modalis.style.display = "none";
-}*/
+}
 
 function photographerFactory(data) {
     const { name, country, city, tagline } = data;
@@ -108,7 +117,7 @@ function photographerFactory(data) {
 
 function photographerFactory2(data) {
     const { portrait } = data;
-    const picture = `assets/photographers/${portrait}`;
+    const picture = assets/photographers/${portrait};
     function getUserCardDOM2() {
         const article = document.createElement("atricle");
         const img = document.createElement("img");
@@ -130,9 +139,11 @@ async function displayPhotographer() {
     //const photographerModel2 = photographerFactory2(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
-    photographersSection2.src = `assets/photographers/${photographer.portrait}`;
+    photographersSection2.src = assets/photographers/${photographer.portrait};
 }
-const photographerMedia = [];
+
+let photographerMedia = [];
+
 async function displayPhotographerMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
     mediaSection.innerHTML = "";
