@@ -57,9 +57,10 @@
 }
 
 .mediaSection article .videoArticle {
-    height: 600px;
+    height: 300px;
     width: 300px;
     cursor: pointer; /*pointeur*/
+    border-radius: 10px;
 }
 
 .modalis {
