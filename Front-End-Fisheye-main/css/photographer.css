@@ -61,6 +61,7 @@
     width: 300px;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .modalis {
