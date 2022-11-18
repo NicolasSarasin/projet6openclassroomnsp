@@ -48,27 +48,24 @@ function photographersMediaFactory(data) {
     //label.textContent = "Trier par";
     const { id, photographerId, title, image, video, likes, date, price } =
         data;
-    const picture = assets/images/${image};
-    const videograme = assets/images/${video};
+    const picture = `assets/images/${image}`;
+    const videograme = `assets/images/${video}`;
     function getUserMediaCardDOM() {
         //let photographerID = new URLSearchParams(window.location.search);
         //photographerIdentification = photographerID.get("photographerId");
         if (photographerId) {
             const article = document.createElement("article");
             let mediaElt = null;
-            if(image != null)
-            {
-              mediaElt = document.createElement("img");
-              mediaElt.src = picture;
-              mediaElt.classList.add("imgArticle");
-              article.appendChild(mediaElt);
-            }
-            else
-            {
-              mediaElt = document.createElement("video");
-              mediaElt.setAttribute("src", videograme);
-              mediaElt.classList.add("videoArticle");
-              article.appendChild(mediaElt);
+            if (image != null) {
+                mediaElt = document.createElement("img");
+                mediaElt.src = picture;
+                mediaElt.classList.add("imgArticle");
+                article.appendChild(mediaElt);
+            } else {
+                mediaElt = document.createElement("video");
+                mediaElt.setAttribute("src", videograme);
+                mediaElt.classList.add("videoArticle");
+                article.appendChild(mediaElt);
             }
             mediaElt.onclick = openmodalis; //au click de l'image, affiche un modal pour mettre les images en avant
 
@@ -87,7 +84,7 @@ function photographersMediaFactory(data) {
 }
 
 function openmodalis() {
-    const Modalis = document.querySelector(".modalis"); //fonction d'ouvertu du modale 
+    const Modalis = document.querySelector(".modalis"); //fonction d'ouvertu du modale
     Modalis.style.display = "block";
 }
 
@@ -117,7 +114,7 @@ function photographerFactory(data) {
 
 function photographerFactory2(data) {
     const { portrait } = data;
-    const picture = assets/photographers/${portrait};
+    const picture = `assets/photographers/${portrait}`;
     function getUserCardDOM2() {
         const article = document.createElement("atricle");
         const img = document.createElement("img");
@@ -139,7 +136,7 @@ async function displayPhotographer() {
     //const photographerModel2 = photographerFactory2(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
-    photographersSection2.src = assets/photographers/${photographer.portrait};
+    photographersSection2.src = `assets/photographers/${photographer.portrait}`;
 }
 
 let photographerMedia = [];
