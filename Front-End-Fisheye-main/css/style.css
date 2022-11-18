@@ -78,6 +78,7 @@ h1 {
     justify-content: space-between;
 }
 .mediaSection article img {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
 }
