@@ -121,17 +121,18 @@ function photographerFactory(data) {
 async function displayPhotographer() {
     const photographersSection = document.querySelector(".photographerInfo");
     const photographersSection2 = document.getElementById("photographerPhoto");
-    const photographersSection3 = document.getElementById("LikesPrice");
+    const photographersSection3 = document.querySelector("LikesPrice");
     const photographer = await getPhotographer(photographerIdentification);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
-    const priceDOM = photographerModel.priceDayDOM();
+    photographersSection2.src = `assets/photographers/${photographer.portrait}`;
+    const photographerModel3 = photographerFactory(photographer);
+    const priceDOM = photographerModel3.priceDayDOM();
     photographersSection3.appendChild(priceDOM);
     //const photographerModel2 = photographerFactory(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
-    photographersSection2.src = `assets/photographers/${photographer.portrait}`;
 }
 
 let photographerMedia = [];
