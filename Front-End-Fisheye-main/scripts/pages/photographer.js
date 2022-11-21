@@ -94,7 +94,7 @@ function closemodalis() {
 }
 
 function photographerFactory(data) {
-    const { name, country, city, tagline } = data;
+    const { name, country, city, tagline, price } = data;
 
     function getUserCardDOM() {
         const article = document.createElement("article");
@@ -109,31 +109,26 @@ function photographerFactory(data) {
         article.appendChild(Tagline);
         return article; //retourne l'article créée
     }
-    return { name, getUserCardDOM };
-}
 
-function photographerFactory2(data) {
-    const { portrait } = data;
-    const picture = `assets/photographers/${portrait}`;
-    function getUserCardDOM2() {
-        const article = document.createElement("atricle");
-        const img = document.createElement("img");
-        img.setAttribute("src", picture);
-        img.classList.add("imgIDphotographersPage");
-        //article.appendChild(img);
-        return /*article*/;
+    function priceDayDOM() {
+        const titlePrice = document.createElement("h2");
+        titlePrice.textContent = price + "/jour";
+        return titlePrice;
     }
-    return { getUserCardDOM2 };
+    return { name, getUserCardDOM, priceDayDOM };
 }
 
 async function displayPhotographer() {
     const photographersSection = document.querySelector(".photographerInfo");
     const photographersSection2 = document.getElementById("photographerPhoto");
+    const photographersSection3 = document.getElementById("LikesPrice");
     const photographer = await getPhotographer(photographerIdentification);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
     photographersSection.appendChild(userCardDOM);
-    //const photographerModel2 = photographerFactory2(photographer);
+    const priceDOM = photographerModel.priceDayDOM();
+    photographersSection3.appendChild(priceDOM);
+    //const photographerModel2 = photographerFactory(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
     photographersSection2.src = `assets/photographers/${photographer.portrait}`;
