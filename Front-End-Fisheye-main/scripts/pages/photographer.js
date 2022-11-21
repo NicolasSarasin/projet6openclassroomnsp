@@ -121,7 +121,7 @@ function photographerFactory(data) {
 async function displayPhotographer() {
     const photographersSection = document.querySelector(".photographerInfo");
     const photographersSection2 = document.getElementById("photographerPhoto");
-    const photographersSection3 = document.querySelector("LikesPrice");
+    const photographersSection3 = document.querySelector(".LikesPrice");
     const photographer = await getPhotographer(photographerIdentification);
     const photographerModel = photographerFactory(photographer);
     const userCardDOM = photographerModel.getUserCardDOM();
