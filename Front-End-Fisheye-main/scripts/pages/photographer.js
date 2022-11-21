@@ -112,7 +112,7 @@ function photographerFactory(data) {
 
     function priceDayDOM() {
         const titlePrice = document.createElement("h2");
-        titlePrice.textContent = price + "/jour";
+        titlePrice.textContent = price + "€/jour";
         return titlePrice;
     }
     return { name, getUserCardDOM, priceDayDOM };
