@@ -64,6 +64,7 @@ function photographersMediaFactory(data) {
             } else {
                 mediaElt = document.createElement("video");
                 mediaElt.setAttribute("src", videograme);
+                mediaElt.setAttribute("conrtols", videograme);
                 mediaElt.classList.add("videoArticle");
                 article.appendChild(mediaElt);
             }
