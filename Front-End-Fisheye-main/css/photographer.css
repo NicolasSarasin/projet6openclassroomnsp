@@ -106,10 +106,12 @@
     width: 95%;
     padding-left: 100px;
     margin-bottom: 180px;
+    margin-top: 16px;
 }
 
 .sort select {
     border-radius: 5px;
+    padding: 16px;
 }
 
 .sort select,
