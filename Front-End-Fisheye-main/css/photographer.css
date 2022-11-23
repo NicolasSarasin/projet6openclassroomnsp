@@ -161,7 +161,7 @@ form input {
     justify-content: space-around;
     width: 440px;
     bottom: 0px;
-    right: 0px;
+    right: 100px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
