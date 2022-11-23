@@ -109,6 +109,11 @@
     margin-top: 16px;
 }
 
+.sort label {
+    font-size: 25px;
+    font-weight: bold;
+}
+
 .sort select {
     border-radius: 5px;
     padding: 16px;
