@@ -110,6 +110,7 @@
 }
 
 .sort label {
+    padding-right: 26px;
     font-size: 25px;
     font-weight: bold;
 }
