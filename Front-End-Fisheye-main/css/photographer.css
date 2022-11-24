@@ -53,6 +53,20 @@
     border-radius: 50%;
 }
 
+.mediaSection article h2 {
+    color: #901c1c;
+    font-size: 32px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mediaSection article img {
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+}
+
 .imgArticle {
     object-fit: cover;
     cursor: pointer; /*pointeur*/
