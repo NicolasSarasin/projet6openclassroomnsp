@@ -54,12 +54,13 @@
 }
 
 .imgArticle {
+    object-fit: cover;
     cursor: pointer; /*pointeur*/
 }
 
 .videoArticle {
-    height: 300px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
@@ -94,12 +95,6 @@
     font-size: 64px;
     font-weight: normal;
     text-align: center;
-}
-
-.imgArticle {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
 }
 
 .sort {
