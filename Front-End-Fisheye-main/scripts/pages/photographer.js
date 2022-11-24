@@ -73,7 +73,8 @@ function photographersMediaFactory(data) {
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title + "  " + likes; //titre + nombre de likes
             const icon = document.createElement("i"); //création d'une icone
-            icon.classList.add("fa-heart"); //ajout de "class" pour la forme de coeur
+            icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
+            icon.classList.add("fa-heart");
             titleMedia.appendChild(icon);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
             return article;
