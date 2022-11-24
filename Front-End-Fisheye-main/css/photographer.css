@@ -116,6 +116,7 @@
     padding-left: 100px;
     margin-bottom: 180px;
     margin-top: 16px;
+    display: flex;
 }
 
 .sort label {
@@ -124,17 +125,32 @@
     font-weight: bold;
 }
 
-.sort select {
+.sort .select {
+    width: 100px;
     border-radius: 5px;
     padding: 16px;
 }
 
-.sort select,
-.sort select option {
+.sort .select,
+.sort .select option {
     font-size: 20px;
     font-weight: bold;
     background-color: #901c1c;
     color: white;
+}
+
+.sort .select option {
+    cursor: pointer;
+}
+
+.date {
+    /*bordure dessus et dessou le mot*/
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .modalForm {
