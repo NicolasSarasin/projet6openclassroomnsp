@@ -147,7 +147,8 @@
     cursor: pointer;
     position: absolute;
     right: 5px;
-    top: 20px;
+    top: 22.5px;
+    font-weight: bold;
 }
 .date {
     /*bordure dessus et dessou le mot*/
