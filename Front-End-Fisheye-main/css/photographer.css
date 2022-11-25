@@ -129,6 +129,7 @@
     width: 100px;
     border-radius: 5px;
     padding: 20px;
+    position: relative;
 }
 
 .sort .select,
@@ -144,6 +145,9 @@
 }
 .sort .fa-angle-up {
     cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 20px;
 }
 .date {
     /*bordure dessus et dessou le mot*/
