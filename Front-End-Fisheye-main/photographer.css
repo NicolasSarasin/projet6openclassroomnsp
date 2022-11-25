@@ -1,0 +1,209 @@
+#contact_modal {
+    display: none;
+    position: relative;
+}
+
+.photograph-header {
+    background-color: #fafafa;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.contact_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 50px;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901c1c;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.photographerInfo h1 {
+    color: #d3573c;
+    font-size: 65px;
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+
+.photographerInfo h2 {
+    margin-top: 0px;
+    font-size: 24px;
+    font-weight: normal;
+    color: #901c1c;
+}
+
+.photographerInfo p {
+    font-size: 18px;
+}
+
+.imgIDphotographersPage {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.mediaSection article h2 {
+    color: #901c1c;
+    font-size: 32px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mediaSection article img {
+    height: 300px;
+    width: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+    cursor: pointer; /*pointeur*/
+}
+
+.videoArticle {
+    height: 300px;
+    width: 350px;
+    cursor: pointer; /*pointeur*/
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modalis {
+    z-index: 1;
+}
+
+.modal {
+    border-radius: 5px;
+    background-color: #db8876;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal header {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal header img {
+    cursor: pointer;
+}
+
+.modal header h2 {
+    font-size: 64px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.sort {
+    width: 95%;
+    padding-left: 100px;
+    margin-bottom: 180px;
+    margin-top: 16px;
+    display: flex;
+}
+
+.sort label {
+    padding-right: 26px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.sort .select {
+    width: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+}
+
+.sort .select,
+.sort .select option {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #901c1c;
+    color: white;
+}
+
+.sort .select option {
+    cursor: pointer;
+}
+.sort .fa-angle-up {
+    /*Flèche du tri*/
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 22.5px;
+    font-weight: bold;
+}
+.date {
+    /*bordure dessus et dessou le mot*/
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.modalForm {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    color: #312e2e;
+    font-size: 36px;
+}
+
+.modalForm div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: self-start;
+    margin-bottom: 26px;
+}
+
+form input {
+    width: 100%;
+    height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+.error {
+    font-size: 0.8em;
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+.LikesPrice {
+    position: fixed;
+    background-color: #db8876;
+    display: flex;
+    justify-content: space-around;
+    width: 440px;
+    bottom: 0px;
+    right: 100px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.LikesPrice h2 {
+    color: black;
+}
