@@ -128,7 +128,7 @@
 .sort .select {
     width: 100px;
     border-radius: 5px;
-    padding: 16px;
+    padding: 20px;
 }
 
 .sort .select,
@@ -142,7 +142,9 @@
 .sort .select option {
     cursor: pointer;
 }
-
+.sort .fa-angle-up {
+    cursor: pointer;
+}
 .date {
     /*bordure dessus et dessou le mot*/
     border-bottom: 1px solid white;
