@@ -138,7 +138,7 @@
 }
 
 .sort .select option {
-    cursor: pointer;
+    cursor: pointer; /*pointeur*/
 }
 .sort .fa-angle-up {
     /*Flèche du tri*/
