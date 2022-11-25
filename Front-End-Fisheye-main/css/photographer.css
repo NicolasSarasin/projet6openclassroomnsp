@@ -129,7 +129,6 @@
     position: relative;
 }
 
-.sort .select,
 .sort .select option {
     font-size: 20px;
     font-weight: bold;
