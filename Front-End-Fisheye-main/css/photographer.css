@@ -60,7 +60,9 @@
     display: flex;
     justify-content: space-between;
 }
-
+.media article {
+    width: 33%;
+}
 .mediaSection article img {
     height: 300px;
     width: 350px;
