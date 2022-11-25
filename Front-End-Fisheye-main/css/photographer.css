@@ -141,6 +141,7 @@
     cursor: pointer;
 }
 .sort .fa-angle-up {
+    /*Flèche du tri*/
     cursor: pointer;
     position: absolute;
     right: 5px;
