@@ -63,7 +63,8 @@
 
 .mediaSection article img {
     height: 300px;
-    width: 350px;
+    min-width: 100%;
+    width: 100%;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
@@ -71,7 +72,8 @@
 
 .videoArticle {
     height: 300px;
-    width: 350px;
+    min-width: 100%;
+    width: 100%;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
