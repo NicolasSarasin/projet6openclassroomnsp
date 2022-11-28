@@ -68,13 +68,12 @@
 .mediaSection .fa-heart,
 .mediaSection .fa-heart-o {
     cursor: pointer; /*pointeur*/
-    position: absolute;
+    /*position: absolute;*/
 }
 
 .imgArticle {
     height: 300px;
-    min-width: 0px;
-    max-width: 814.33px;
+    width: 350px;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
@@ -82,8 +81,7 @@
 
 .videoArticle {
     height: 300px;
-    min-width: 0px;
-    max-width: 814.33px;
+    width: 350px;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
