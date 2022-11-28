@@ -53,6 +53,10 @@
     border-radius: 50%;
 }
 
+.mediaSection {
+    position: relative;
+}
+
 .mediaSection article h2 {
     color: #901c1c;
     font-size: 32px;
@@ -64,12 +68,13 @@
 .mediaSection .fa-heart,
 .mediaSection .fa-heart-o {
     cursor: pointer; /*pointeur*/
+    position: absolute;
 }
 
 .imgArticle {
     height: 300px;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 0px;
+    max-width: 814.33px;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
@@ -77,8 +82,8 @@
 
 .videoArticle {
     height: 300px;
-    min-width: 100%;
-    width: 100%;
+    min-width: 0px;
+    max-width: 814.33px;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
