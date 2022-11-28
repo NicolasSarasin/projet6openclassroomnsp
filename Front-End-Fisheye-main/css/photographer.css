@@ -61,6 +61,11 @@
     justify-content: space-between;
 }
 
+.mediaSection .fa-heart,
+.mediaSection .fa-heart-o {
+    cursor: pointer; /*pointeur*/
+}
+
 .imgArticle {
     height: 300px;
     min-width: 100%;
