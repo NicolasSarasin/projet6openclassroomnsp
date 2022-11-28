@@ -75,7 +75,7 @@ function photographersMediaFactory(data) {
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
-            const icon2 = documment.createElement("i");
+            const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
             titleMedia.appendChild(icon2);
