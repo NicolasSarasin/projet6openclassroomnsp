@@ -61,7 +61,7 @@
     justify-content: space-between;
 }
 
-.mediaSection article img {
+.imgArticle {
     height: 300px;
     min-width: 100%;
     width: 100%;
