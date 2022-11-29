@@ -77,8 +77,7 @@
 
 .imgArticle {
     height: 300px;
-    width: 90%;
-    max-width: 820px;
+    width: 80%;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
@@ -86,8 +85,7 @@
 
 .videoArticle {
     height: 300px;
-    width: 90%;
-    max-width: 820px;
+    width: 80%;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
