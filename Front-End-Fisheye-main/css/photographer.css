@@ -55,9 +55,10 @@
 
 .mediaSection {
     position: relative;
+}
+.mediaSection article {
     width: 100%; /**/
 }
-
 .mediaSection article h2 {
     color: #901c1c;
     font-size: 32px;
