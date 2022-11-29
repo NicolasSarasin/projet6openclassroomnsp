@@ -56,9 +56,11 @@
 .mediaSection {
     position: relative;
 }
+
 .mediaSection article {
     width: 100%; /**/
 }
+
 .mediaSection article h2 {
     color: #901c1c;
     font-size: 32px;
@@ -75,7 +77,7 @@
 
 .imgArticle {
     height: 300px;
-    width: 100%;
+    width: 95%;
     max-width: 820px;
     border-radius: 10px;
     object-fit: cover;
@@ -84,7 +86,7 @@
 
 .videoArticle {
     height: 300px;
-    width: 100%;
+    width: 95%;
     max-width: 820px;
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
