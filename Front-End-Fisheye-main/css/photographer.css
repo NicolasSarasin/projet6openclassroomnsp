@@ -55,7 +55,7 @@
 
 .mediaSection {
     position: relative;
-    width: 33%; /**/
+    width: 100%; /**/
 }
 
 .mediaSection article h2 {
