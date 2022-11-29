@@ -95,6 +95,10 @@
     z-index: 1;
 }
 
+.svgModalis {
+    color: #901c1c;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #db8876;
@@ -154,6 +158,7 @@
 .sort .select option {
     cursor: pointer; /*pointeur*/
 }
+
 .sort .fa-angle-up {
     /*Flèche du tri*/
     cursor: pointer;
@@ -161,6 +166,35 @@
     right: 5px;
     top: 22.5px;
     font-weight: bold;
+    animation-duration: 1s;
+    animation-name: rotationAngleInvert;
+    transform: rotate(0deg);
+}
+
+.sort .fa-angle-up:hover {
+    animation-duration: 1s;
+    animation-name: rotationAngle;
+    transform: rotate(180deg);
+}
+
+@keyframes rotationAngle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotationAngleInvert {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 .date {
     /*bordure dessus et dessou le mot*/
