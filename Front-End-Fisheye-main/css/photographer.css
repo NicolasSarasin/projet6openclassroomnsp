@@ -64,6 +64,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+    width: 100%;
 }
 
 .mediaSection .fa-heart,
