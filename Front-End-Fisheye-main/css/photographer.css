@@ -53,10 +53,6 @@
     border-radius: 50%;
 }
 
-.mediaSection {
-    position: relative;
-}
-
 .mediaSection article {
     width: 100%; /**/
 }
@@ -67,12 +63,13 @@
     margin-bottom: 0px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .mediaSection .fa-heart,
 .mediaSection .fa-heart-o {
     cursor: pointer; /*pointeur*/
-    /*position: absolute;*/
+    position: absolute;
 }
 
 .imgArticle {
