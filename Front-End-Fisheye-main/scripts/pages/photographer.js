@@ -72,15 +72,15 @@ function photographersMediaFactory(data) {
 
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
-            const likes = document.createElement("h2");
-            likes.textContent = likes;
+            const likesh2 = document.createElement("h2");
+            likesh2.textContent = likes;
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
-            titleMedia.appendChild(likes);
+            titleMedia.appendChild(likesh2);
             titleMedia.appendChild(icon2);
             titleMedia.appendChild(icon);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
