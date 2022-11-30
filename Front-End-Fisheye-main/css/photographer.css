@@ -147,6 +147,10 @@
     position: relative;
 }
 
+.sort .select:hover {
+    height: 10px;
+}
+
 .sort .select,
 .sort .select option {
     font-size: 20px;
@@ -201,10 +205,10 @@
     /*bordure dessus et dessou le mot*/
     border-bottom: 1px solid white;
     border-top: 1px solid white;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .modalForm {
