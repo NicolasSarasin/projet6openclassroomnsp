@@ -68,7 +68,7 @@
     width: 76%;
 }
 
-.mediaSection article h2 .nbLikes {
+.mediaSection article .nbLikes {
     position: absolute;
     right: 40px;
 }
