@@ -61,8 +61,8 @@
     color: #901c1c;
     font-size: 32px;
     margin-bottom: 0px;
-    display: flex;
-    justify-content: flex-end;
+    /*display: flex;
+    justify-content: flex-end;*/
     position: relative;
     width: 76%;
 }
