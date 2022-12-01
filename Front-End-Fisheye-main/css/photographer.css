@@ -62,7 +62,7 @@
     font-size: 32px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: relative;
     width: 76%;
 }
@@ -152,7 +152,8 @@
 }
 
 .sort .select:hover {
-    height: 10px;
+    height: 16px;
+    overflow-y: hidden;
 }
 
 .sort .select,
