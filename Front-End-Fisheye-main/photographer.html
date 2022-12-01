@@ -43,12 +43,16 @@
             <!--<input type="submit" value="Populatité" />-->
             <!--<input type="submit" value="Date" />-->
             <!--<input type="submit" value="Titre" />-->
-            <div name="" class="select" id="" onchange="sortMedia(this.value)">
+            <div class="select">
                 <!--div avec option-->
-                <option value="popularity" onclick="">Popularité</option>
+                <div value="popularity" onclick="sortMedia('popularity')">
+                    Popularité
+                </div>
                 <i class="fa fa-angle-up"></i>
-                <option class="date" value="date" onclick="">Date</option>
-                <option value="title" onclick="">Titre</option>
+                <div class="date" value="date" onclick="sortMedia('date')">
+                    Date
+                </div>
+                <div value="title" onclick="sortMedia('title')">Titre</div>
             </div>
             <!--</div>-->
         </form>
