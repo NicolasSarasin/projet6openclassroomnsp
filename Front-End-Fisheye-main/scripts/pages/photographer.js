@@ -81,7 +81,7 @@ function photographersMediaFactory(data) {
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
-            titleMedia.appendChild(likesh2);
+            article.appendChild(likesh2);
             titleMedia.appendChild(icon2);
             titleMedia.appendChild(icon);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
