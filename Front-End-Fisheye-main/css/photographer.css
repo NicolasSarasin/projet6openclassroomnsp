@@ -62,7 +62,7 @@
     font-size: 32px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     position: relative;
     width: 76%;
 }
@@ -151,14 +151,14 @@
 }
 
 .sort .select,
-.sort .select option {
+.sort .select div {
     font-size: 20px;
     font-weight: bold;
     background-color: #901c1c;
     color: white;
 }
 
-.sort .select option {
+.sort .select div {
     cursor: pointer; /*pointeur*/
 }
 
