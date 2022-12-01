@@ -71,6 +71,7 @@
 .mediaSection article .nbLikes {
     position: absolute;
     right: 40px;
+    bottom: 0px;
 }
 
 .mediaSection .fa-heart,
