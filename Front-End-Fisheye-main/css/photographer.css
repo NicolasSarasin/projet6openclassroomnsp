@@ -67,6 +67,11 @@
     width: 76%;
 }
 
+.mediaSection article h2 {
+    position: absolute;
+    right: 40px;
+}
+
 .mediaSection .fa-heart,
 .mediaSection .fa-heart-o {
     cursor: pointer; /*pointeur*/
