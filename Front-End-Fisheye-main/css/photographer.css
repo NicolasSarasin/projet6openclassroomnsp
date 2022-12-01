@@ -62,15 +62,15 @@
     font-size: 32px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
     width: 76%;
 }
 
-.mediaSection article h2 .nbLikes {
+/*.mediaSection article h2 .nbLikes {
     position: absolute;
     right: 40px;
-}
+}*/
 
 .mediaSection .fa-heart,
 .mediaSection .fa-heart-o {
@@ -147,12 +147,12 @@
 .sort .select {
     width: 100px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     position: relative;
 }
 
 .sort .select:hover {
-    height: 16px;
+    height: 20px;
     overflow-y: hidden;
 }
 
@@ -173,7 +173,7 @@
     cursor: pointer;
     position: absolute;
     right: 5px;
-    top: 22.5px;
+    top: 12.5px;
     font-weight: bold;
     animation-duration: 1s;
     animation-name: rotationAngleInvert;
