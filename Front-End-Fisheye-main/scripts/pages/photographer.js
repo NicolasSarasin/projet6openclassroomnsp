@@ -74,6 +74,7 @@ function photographersMediaFactory(data) {
             titleMedia.textContent = title; //titre + nombre de likes
             const likesh2 = document.createElement("h2");
             likesh2.textContent = likes;
+            likesh2.classList.add("nbLikes");
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
