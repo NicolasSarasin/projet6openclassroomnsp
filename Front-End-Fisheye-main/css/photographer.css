@@ -62,7 +62,7 @@
     font-size: 32px;
     margin-bottom: 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: relative;
     width: 76%;
 }
