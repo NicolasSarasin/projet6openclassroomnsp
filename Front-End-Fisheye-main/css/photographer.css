@@ -70,7 +70,7 @@
 
 .mediaSection article .nbLikes {
     position: absolute;
-    right: 40px;
+    left: 40px;
     bottom: 0px;
 }
 
