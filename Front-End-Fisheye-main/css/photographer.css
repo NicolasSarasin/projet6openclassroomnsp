@@ -69,8 +69,10 @@
 }
 
 .mediaSection article .nbLikes {
+    color: #901c1c;
+    font-size: 32px;
     position: absolute;
-    left: 40px;
+    right: 80px;
     bottom: 0px;
 }
 
