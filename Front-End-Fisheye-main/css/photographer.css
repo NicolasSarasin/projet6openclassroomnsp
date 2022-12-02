@@ -155,7 +155,7 @@
     position: relative;
 }
 
-.sort .select:hover {
+.sort .select:active {
     height: 20px;
     overflow-y: hidden;
 }
