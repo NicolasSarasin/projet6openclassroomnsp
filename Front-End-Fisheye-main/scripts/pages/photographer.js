@@ -72,7 +72,7 @@ function photographersMediaFactory(data) {
 
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
-            titleMedia.classList.add("titleedia");
+            titleMedia.classList.add("titleMedia");
             const likesh2 = document.createElement("h2");
             likesh2.textContent = likes;
             likesh2.classList.add("nbLikes");
