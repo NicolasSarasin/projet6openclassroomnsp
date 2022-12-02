@@ -58,7 +58,7 @@
     position: relative;
 }
 
-.mediaSection article h2 {
+.mediaSection article .titleMedia {
     color: #901c1c;
     font-size: 32px;
     margin-bottom: 0px;
