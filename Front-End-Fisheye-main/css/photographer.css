@@ -184,7 +184,7 @@
     transform: rotate(0deg);
 }
 
-.sort .fa-angle-up:hover {
+.sort .fa-angle-up:active {
     /*survol de l'angle*/
     animation-duration: 1s;
     animation-name: rotationAngle;
