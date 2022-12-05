@@ -132,7 +132,7 @@ function photographerFactory(data) {
         icon.classList.add("fa-heart");*/
         //totalLikes.textContent = likes + " " + icon;
         titlePrice.textContent = price + "€/jour";
-        return [totalLikes, titlePrice];
+        return /*[totalLikes]*/ titlePrice;
     }
     return { name, getUserCardDOM, priceDayDOM };
 }
