@@ -103,6 +103,7 @@
     z-index: 1;
     color: #901c1c;
     font-size: 40px; /*taille des flèches*/
+    display: none;
 }
 
 .modal {
