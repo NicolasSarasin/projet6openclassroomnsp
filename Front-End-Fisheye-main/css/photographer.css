@@ -104,10 +104,11 @@
     color: #901c1c;
     font-size: 60px; /*taille des flèches*/
     display: none;
-    cursor: pointer;
 }
+
 .modalis .fa {
     font-weight: bold;
+    cursor: pointer;
 }
 
 .modal {
