@@ -106,7 +106,8 @@
     display: none;
 }
 
-.modalis .fa {
+.modalis .fa,
+.modalis .svgModalis {
     font-weight: bold;
     cursor: pointer;
 }
