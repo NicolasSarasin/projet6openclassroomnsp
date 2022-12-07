@@ -175,9 +175,9 @@ async function displayPhotographerMedia(media) {
         const mediaModel = photographersMediaFactory(media);
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
-        const totalLikesAdd = photographerFactory(media);
+        /*const totalLikesAdd = photographerFactory(media);
         const userLikeTotal = totalLikesAdd.priceDOM();
-        likeSection.appendChild(userLikeTotal);
+        likeSection.appendChild(userLikeTotal);*/
     });
 }
 
