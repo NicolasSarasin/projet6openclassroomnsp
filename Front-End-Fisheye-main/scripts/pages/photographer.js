@@ -236,13 +236,9 @@ function showListOptions() {
 }
 
 function selectOption(option, elt) {
-    const iconAngle = document.createElement("i");
-    iconAngle.classList.add("fa");
-    iconAngle.classList.add("fa-angle-up");
     document.getElementById("selectOptions").classList.add("hidden");
     document.getElementById("selectValue").classList.remove("hidden");
-    document.getElementById("selectValue").textContent =
-        elt.innerText + iconAngle;
+    document.getElementById("selectValue").textContent = elt.innerText;
 
     sortMedia(option);
 }
