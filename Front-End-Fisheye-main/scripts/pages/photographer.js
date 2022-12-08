@@ -233,5 +233,21 @@ async function init() {
     // Récupère les datas des photographes
     displayPhotographer();
     photographerMedia = await getPhotgrapherMedia(photographerIdentification);
-    displayPhotographerMedia(photographerMedia);
+    sortMedia("popularity");
+    //displayPhotographerMedia(photographerMedia);
+}
+
+function showListOptions()
+{
+  document.getElementById("selectOptions").classList.remove("hidden");
+  document.getElementById("selectValue").classList.add("hidden");
+}
+
+function selectOption(option, elt)
+{
+  document.getElementById("selectOptions").classList.add("hidden");
+  document.getElementById("selectValue").classList.remove("hidden");
+  document.getElementById("selectValue").textContent = elt.innerText;
+  
+  sortMedia(option);
 }

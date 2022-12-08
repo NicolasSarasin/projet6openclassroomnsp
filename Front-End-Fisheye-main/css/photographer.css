@@ -60,7 +60,7 @@
 
 .mediaSection article .titleMedia {
     color: #901c1c;
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 0px;
     /*display: flex;
     justify-content: space-between;*/
@@ -156,7 +156,7 @@
 .sort .select {
     width: 100px;
     border-radius: 5px;
-    padding: 10px 20px 10px 20px;
+    padding: 20px;
     position: relative;
 }
 
@@ -182,7 +182,7 @@
     cursor: pointer;
     position: absolute;
     right: 5px;
-    top: 12.5px;
+    top: 22.5px;
     font-weight: bold;
     animation-duration: 1s;
     animation-name: rotationAngleInvert;
@@ -274,4 +274,28 @@ form input {
 
 .LikesPrice h2 {
     color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.selectValue {
+    width: 100px;
+    color: white;
+    background-color: #901c1c;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+}
+
+.selectValue .fa-angle-up {
+    animation-duration: 1s;
+    animation-name: rotationAngle;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 5px;
+    top: 22.5px;
 }
