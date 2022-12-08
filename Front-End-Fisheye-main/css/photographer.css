@@ -81,6 +81,7 @@
     cursor: pointer; /*pointeur*/
     position: absolute;
     right: 0px;
+    bottom: 2.5px;
 }
 
 .imgArticle {
