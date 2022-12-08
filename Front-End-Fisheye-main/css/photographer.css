@@ -104,6 +104,7 @@
     color: #901c1c;
     font-size: 60px; /*taille des flèches*/
     display: none;
+    position: relative;
 }
 
 .modalis .fa,
