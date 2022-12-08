@@ -34,7 +34,7 @@ h1 {
 .mediaSection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    gap: 30px;
 }
 .photographer_section a {
     text-decoration: none;

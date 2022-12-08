@@ -65,7 +65,7 @@
     /*display: flex;
     justify-content: space-between;*/
     position: relative;
-    width: 76%;
+    width: 96%;
 }
 
 .mediaSection article .nbLikes {
@@ -85,7 +85,7 @@
 
 .imgArticle {
     height: 300px;
-    width: 76%; /*largeur*/
+    width: 96%; /*largeur*/
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
@@ -93,7 +93,7 @@
 
 .videoArticle {
     height: 300px;
-    width: 76%; /*largeur*/
+    width: 96%; /*largeur*/
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
