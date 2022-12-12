@@ -101,17 +101,51 @@
 }
 
 .modalis {
-    z-index: 1;
+    z-index: 5;
     color: #901c1c;
-    font-size: 60px; /*taille des flèches*/
-    display: none;
+    font-size: 100px; /*taille des flèches*/
+    /*display: none;*/
+    overflow-y: hidden;
     position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .modalis .fa,
 .modalis .svgModalis {
-    font-weight: bold;
     cursor: pointer;
+    opacity: 0.7;
+}
+
+.modalis .fa:hover,
+.modalis .svgModalis:hover {
+    opacity: 1;
+}
+
+.modalis .svgModalis {
+    position: absolute;
+    top: 0px;
+    right: 100px;
+}
+
+.modalis .fa-angle-right {
+    position: absolute;
+    right: 100px;
+    top: 50%;
+}
+
+.modalis .fa-angle-left {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+}
+
+.modalis .image,
+.modalis .video {
+    width: 78%;
+    height: 100%;
+    padding-left: 275px;
+    padding-right: 275px;
 }
 
 .modal {
