@@ -105,7 +105,7 @@
     color: #901c1c;
     font-size: 100px; /*taille des flèches*/
     display: none;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
     position: relative;
     height: 100%;
     width: 100%;
