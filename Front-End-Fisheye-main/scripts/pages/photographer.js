@@ -98,8 +98,20 @@ function photographersMediaFactory(data) {
 }
 
 function openmodalis() {
-    const Modalis = document.querySelector(".modalis"); //fonction d'ouvertu du modale
+    //fonction d'ouvertu du modale
+    const Modalis = document.querySelector(".modalis");
     Modalis.style.display = "block";
+    function changeImageModalis() {
+        let mediaElt = null; //Création d'un mediaElt
+        const changeMediaRight = document.querySelector(".fa-angle-right");
+        const changeMediaLeft = document.querySelector(".fa-angle-left");
+        if (onclick(changeMediaRight)) {
+            //mediaElt.getUserMediaCardDOM(); //média suivante
+        } else if (onclick(changeMediaLeft)) {
+            //mediaElt.getUserMediaCardDOM(); //média précédent
+        }
+    }
+    return { changeImageModalis };
 }
 
 function closemodalis() {
@@ -124,17 +136,17 @@ function photographerFactory(data) {
     }
 
     function priceDayDOM() {
-        //let totalLikes = document.createElement("h2");
+        let totalLikes = document.createElement("h2");
         const titlePrice = document.createElement("h2");
-        /*let likeNull = 0;
-        totalLikes.forEach(function (like) {
+        let likeNull = 0; //Nombre de likes à 0 avant ajout
+        /*totalLikes.forEach(function (like) {
             let likeUnit = Number(like.textContent);
             likeNull += likeUnit;
         });*/
         /*const icon = document.createElement("i");
         icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
         icon.classList.add("fa-heart");*/
-        //Number(totalLikes.textContent = likes + " " + icon);
+        //totalLikes.textContent = likeNull +" "+ icon;
         titlePrice.textContent = price + "€/jour";
         return /*[totalLikes,]*/ titlePrice;
     }
@@ -168,10 +180,10 @@ async function displayPhotographerMedia(media) {
         const mediaModel = photographersMediaFactory(media);
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
-        //const totalLikesAdd = photographerFactory(media);
-        //const userLikeTotal = totalLikesAdd.priceDOM();
-        //likeSection.appendChild(userLikeTotal);
     });
+    const totalLikesAdd = photographerFactory(media);
+    const userLikeTotal = totalLikesAdd.priceDOM();
+    //likeSection.appendChild(userLikeTotal);
 }
 
 function sortByLikes(a, b) {
