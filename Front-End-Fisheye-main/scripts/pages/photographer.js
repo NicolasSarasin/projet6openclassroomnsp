@@ -68,7 +68,9 @@ function photographersMediaFactory(data) {
                 mediaElt.classList.add("videoArticle");
                 article.appendChild(mediaElt);
             }
-            mediaElt.onclick = openmodalis; //au click de l'image, affiche un modal pour mettre les images en avant
+            mediaElt.onclick = function () {
+                openmodalis(id);
+            }; //au click de l'image, affiche un modal pour mettre les images en avant
 
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
@@ -97,21 +99,27 @@ function photographersMediaFactory(data) {
     return { getUserMediaCardDOM };
 }
 
-function openmodalis() {
+function openmodalis(id) {
     //fonction d'ouvertu du modale
+    currentMediaIndex = photographerMedia.findIndex((media) => media.id == id);
+    console.log([id, currentMediaIndex]);
+    photographerMedia[currentMediaIndex];
     const Modalis = document.querySelector(".modalis");
+    const titleModalis = document.createElement("p");
     Modalis.style.display = "block";
-    function changeImageModalis() {
-        let mediaElt = null; //Création d'un mediaElt
-        const changeMediaRight = document.querySelector(".fa-angle-right");
-        const changeMediaLeft = document.querySelector(".fa-angle-left");
-        if (onclick(changeMediaRight)) {
-            //mediaElt.getUserMediaCardDOM(); //média suivante
-        } else if (onclick(changeMediaLeft)) {
-            //mediaElt.getUserMediaCardDOM(); //média précédent
-        }
-    }
-    return { changeImageModalis };
+    //Modalis.appendChild(titleModalis);
+}
+
+function next() {
+    currentMediaIndex = (currentMediaIndex + 1) % photographerMedia.length;
+    openmodalis();
+}
+
+function previous() {
+    currentMediaIndex =
+        (currentMediaIndex + photographerMedia.length - 1) %
+        photographerMedia.length;
+    openmodalis();
 }
 
 function closemodalis() {
@@ -171,6 +179,7 @@ async function displayPhotographer() {
 }
 
 let photographerMedia = [];
+const currentMediaIndex = null;
 
 async function displayPhotographerMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
@@ -181,8 +190,8 @@ async function displayPhotographerMedia(media) {
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
     });
-    const totalLikesAdd = photographerFactory(media);
-    const userLikeTotal = totalLikesAdd.priceDOM();
+    //const totalLikesAdd = photographerFactory(media);
+    //const userLikeTotal = totalLikesAdd.priceDOM();
     //likeSection.appendChild(userLikeTotal);
 }
 
