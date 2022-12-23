@@ -53,6 +53,10 @@
     border-radius: 50%;
 }
 
+.mediaSection {
+    padding-bottom: 25px;
+}
+
 .mediaSection article {
     width: 100%; /**/
     position: relative;
@@ -106,9 +110,13 @@
     font-size: 100px; /*taille des flèches*/
     display: none;
     /*overflow-y: hidden;*/
-    position: relative;
+    position: fixed;
+    top: 0px;
+    padding-top: 160px;
+    padding-bottom: 160px;
     height: 1080px;
     width: 100%;
+    background-color: white;
 }
 
 .modalis .fa,
@@ -124,7 +132,7 @@
 
 .modalis .svgModalis {
     position: absolute;
-    top: 0px;
+    top: 170px;
     right: 100px;
 }
 
@@ -144,14 +152,15 @@
 .modalis .video {
     position: absolute;
     width: 78%;
-    height: 95%;
+    height: 1026px;
     left: 275px;
+    object-fit: contain;
 }
 
 .modalis p {
     position: absolute;
     left: 275px;
-    bottom: -20px;
+    bottom: 140px;
     font-size: 30px;
 }
 
@@ -164,7 +173,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 35px;
-    margin: auto;
+    position: fixed;
+    bottom: 200px;
+    left: 23%;
+    /*margin: auto;*/
 }
 
 .modal header {

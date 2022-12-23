@@ -101,32 +101,47 @@ function photographersMediaFactory(data) {
 
 function openmodalis(id) {
     //fonction d'ouvertu du modale
-    //currentMediaIndex = photographerMedia.findIndex((media) => media.id == id);
+    currentMediaIndex = photographerMedia.findIndex((media) => media.id == id);
     console.log([id, currentMediaIndex]);
-    const Media = photographerMedia[currentMediaIndex];
+    displayModalisMedia();
+}
+
+function displayModalisMedia() {
+    const media = photographerMedia[currentMediaIndex];
     const Modalis = document.querySelector(".modalis");
-    const titleModalis = document.createElement("p");
-    titleModalis.textContent = "test";
     Modalis.style.display = "block";
-    //Modalis.appendChild(currentMediaIndex);
-    //Modalis.appendChild(Media);
-    Modalis.appendChild(titleModalis); // titre du média
+    document.getElementById("modalisTitle").textContent = media.title;
+    if (media.image) {
+        document.getElementById(
+            "modalisImage"
+        ).src = `assets/images/${media.image}`;
+        document.getElementById("modalisImage").style.display = "block";
+        document.getElementById("modalisVideo").style.display = "none";
+    } else {
+        document.getElementById(
+            "modalisVideo"
+        ).src = `assets/images/${media.video}`;
+        document.getElementById("modalisVideo").style.display = "block";
+        document.getElementById("modalisImage").style.display = "none";
+    }
 }
 
 function next() {
     currentMediaIndex = (currentMediaIndex + 1) % photographerMedia.length;
-    openmodalis();
+    displayModalisMedia();
 }
 
 function previous() {
     currentMediaIndex =
         (currentMediaIndex + photographerMedia.length - 1) %
         photographerMedia.length;
-    openmodalis();
+    displayModalisMedia();
 }
 
 function closemodalis() {
     const Modalis = document.querySelector(".modalis"); //fonction de fermeture du modalis
+    document.getElementById("modalisTitle").textContent = "";
+    document.getElementById("modalisImage").src = "";
     Modalis.style.display = "none";
 }
 
@@ -147,19 +162,20 @@ function photographerFactory(data) {
     }
 
     function priceDayDOM() {
-        let totalLikes = document.createElement("h2");
+        let totalLikes;
+        const totalLikesAdd = document.createElement("h2");
         const titlePrice = document.createElement("h2");
         let likeNull = 0; //Nombre de likes à 0 avant ajout
         /*totalLikes.forEach(function (like) {
             let likeUnit = Number(like.textContent);
             likeNull += likeUnit;
         });*/
-        /*const icon = document.createElement("i");
+        const icon = document.createElement("i");
         icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
         icon.classList.add("fa-heart");
-        totalLikes.textContent = likeNull + " " + icon;*/
+        totalLikesAdd.textContent = likeNull + " " + icon;
         titlePrice.textContent = price + "€/jour";
-        return /*[totalLikes,]*/ titlePrice;
+        return /*[totalLikes, titlePrice]*/ titlePrice;
     }
     return { name, getUserCardDOM, priceDayDOM };
 }
@@ -182,7 +198,7 @@ async function displayPhotographer() {
 }
 
 let photographerMedia = [];
-const currentMediaIndex = null;
+let currentMediaIndex = null;
 
 async function displayPhotographerMedia(media) {
     const mediaSection = document.querySelector(".mediaSection");
@@ -193,9 +209,9 @@ async function displayPhotographerMedia(media) {
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
     });
-    /*const totalLikesAdd = photographerFactory(media);
+    const totalLikesAdd = photographerFactory(media);
     const userLikeTotal = totalLikesAdd.priceDayDOM();
-    likeSection.appendChild(userLikeTotal);*/
+    likeSection.appendChild(userLikeTotal);
 }
 
 function sortByLikes(a, b) {
