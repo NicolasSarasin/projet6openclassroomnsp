@@ -93,7 +93,12 @@
                     <h2>Contactez-moi</h2>
                     <img src="assets/icons/close.svg" onclick="closeModal()" />
                 </header>
-                <form class="modalForm" name="messageToPhotographe">
+                <form
+                    class="modalForm"
+                    name="messageToPhotographe"
+                    method="post"
+                    onsubmit="return validate()"
+                >
                     <div>
                         <label for="first">Prénom</label>
                         <input type="text" id="first" name="first" />

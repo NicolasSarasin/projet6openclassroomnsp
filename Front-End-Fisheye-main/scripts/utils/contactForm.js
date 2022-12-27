@@ -1,6 +1,10 @@
 function displayModal() {
     const modal = document.getElementById("contact_modal");
+    closeModal();
     modal.style.display = "block";
+}
+
+function validate() {
     document.getElementById("firstNameError").style.display = "none";
     document.getElementById("lastNameError").style.display = "none";
     document.getElementById("emailError").style.display = "none";
@@ -37,5 +41,5 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    modal.style.display = "";
 }
