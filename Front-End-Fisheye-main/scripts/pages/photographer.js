@@ -75,15 +75,19 @@ function photographersMediaFactory(data) {
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
             titleMedia.classList.add("titleMedia");
-            const likesh2 = document.createElement("h2");
+            let likesh2 = document.createElement("h2");
             likesh2.textContent = likes;
             likesh2.classList.add("nbLikes");
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
+            icon.setAttribute("id", "dislike");
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
+            icon2.setAttribute("id", "like");
+            //icon.setAttribute("onclick", Likes());
+            //icon2.setAttribute("onclick", Dislikes());
             titleMedia.appendChild(likesh2);
             titleMedia.appendChild(icon2);
             titleMedia.appendChild(icon);
@@ -97,6 +101,23 @@ function photographersMediaFactory(data) {
     const idMedia = id;*/
 
     return { getUserMediaCardDOM };
+}
+
+function Likes() {
+    //fonction avec l'affichage du coeur en entier
+    const likes = document.getElementById("like");
+    likes.style.display = "inline";
+    const dislikes = document.getElementById("dislike");
+    dislikes.style.display = "";
+    priceDayDOM();
+}
+
+function Dislikes() {
+    //fonction avec l'affichage du coeur avec la bordure
+    const dislikes = document.getElementById("dislike");
+    dislikes.style.display = "block";
+    const likes = document.getElementById("like");
+    likes.style.display = "";
 }
 
 function openmodalis(id) {
@@ -162,20 +183,15 @@ function photographerFactory(data) {
     }
 
     function priceDayDOM() {
-        let totalLikes;
-        const totalLikesAdd = document.createElement("h2");
-        const titlePrice = document.createElement("h2");
+        const totalLikesAdd = document.getElementById("numberLikes");
+        const titlePrice = document.getElementById("numberPrice");
         let likeNull = 0; //Nombre de likes à 0 avant ajout
-        /*totalLikes.forEach(function (like) {
-            let likeUnit = Number(like.textContent);
+        photographerMedia.forEach(function (pmedia) {
+            let likeUnit = Number(pmedia.likes);
             likeNull += likeUnit;
-        });*/
-        const icon = document.createElement("i");
-        icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
-        icon.classList.add("fa-heart");
-        totalLikesAdd.textContent = likeNull + " " + icon;
+        });
+        totalLikesAdd.textContent = likeNull;
         titlePrice.textContent = price + "€/jour";
-        return /*[totalLikes, titlePrice]*/ titlePrice;
     }
     return { name, getUserCardDOM, priceDayDOM };
 }
@@ -190,8 +206,7 @@ async function displayPhotographer() {
     photographersSection.appendChild(userCardDOM);
     photographersSection2.src = `assets/photographers/${photographer.portrait}`;
     const photographerModel3 = photographerFactory(photographer);
-    const priceDOM = photographerModel3.priceDayDOM();
-    photographersSection3.appendChild(priceDOM);
+    photographerModel3.priceDayDOM();
     //const photographerModel2 = photographerFactory(photographer);
     //const userCardDOM2 = photographerModel2.getUserCardDOM2();
     //photographersSection2.appendChild(userCardDOM2);
@@ -209,9 +224,6 @@ async function displayPhotographerMedia(media) {
         const userMediaCardDOM = mediaModel.getUserMediaCardDOM();
         mediaSection.appendChild(userMediaCardDOM);
     });
-    const totalLikesAdd = photographerFactory(media);
-    const userLikeTotal = totalLikesAdd.priceDayDOM();
-    likeSection.appendChild(userLikeTotal);
 }
 
 function sortByLikes(a, b) {
@@ -264,10 +276,11 @@ function sortMedia(option) {
 
 async function init() {
     // Récupère les datas des photographes
-    displayPhotographer();
+
     photographerMedia = await getPhotgrapherMedia(photographerIdentification);
     //sortMedia("popularity");
     displayPhotographerMedia(photographerMedia);
+    displayPhotographer();
 }
 
 function showListOptions() {

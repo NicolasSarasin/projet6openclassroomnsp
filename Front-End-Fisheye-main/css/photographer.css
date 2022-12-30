@@ -88,6 +88,10 @@
     bottom: 2.5px;
 }
 
+.mediaSection .fa-heart {
+    display: none;
+}
+
 .imgArticle {
     height: 300px;
     width: 96%; /*largeur*/
@@ -306,6 +310,7 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 .error {
@@ -329,6 +334,13 @@ form input {
 
 .LikesPrice h2 {
     color: black;
+}
+
+.LikesPrice .fa-heart {
+    position: absolute;
+    font-size: 25px;
+    top: 21.5px;
+    left: 120px;
 }
 
 .hidden {
