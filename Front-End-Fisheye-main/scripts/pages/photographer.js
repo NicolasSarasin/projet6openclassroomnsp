@@ -81,13 +81,20 @@ function photographersMediaFactory(data) {
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
-            icon.setAttribute("id", "dislike");
+            icon.setAttribute("id", "like");
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
-            icon2.setAttribute("id", "like");
-            //icon.setAttribute("onclick", Likes());
-            //icon2.setAttribute("onclick", Dislikes());
+            icon2.setAttribute("id", "dislike");
+            icon.setAttribute("onclick", "Dislikes()");
+            icon2.setAttribute("onclick", "Likes()");
+            /*if (onclick == Likes()) {
+                likes = likes++;
+            } else if (onclick == Dislikes()) {
+                likes = likes--;
+            } else {
+                likes = likes;
+            } */
             titleMedia.appendChild(likesh2);
             titleMedia.appendChild(icon2);
             titleMedia.appendChild(icon);
@@ -109,7 +116,6 @@ function Likes() {
     likes.style.display = "inline";
     const dislikes = document.getElementById("dislike");
     dislikes.style.display = "";
-    priceDayDOM();
 }
 
 function Dislikes() {

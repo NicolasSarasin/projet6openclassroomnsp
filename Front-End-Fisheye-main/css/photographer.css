@@ -80,8 +80,8 @@
     bottom: -22.5px;
 }
 
-.mediaSection .fa-heart,
-.mediaSection .fa-heart-o {
+.mediaSection article .titleMedia .fa-heart,
+.mediaSection article .titleMedia .fa-heart-o {
     cursor: pointer; /*pointeur*/
     position: absolute;
     right: 0px;
