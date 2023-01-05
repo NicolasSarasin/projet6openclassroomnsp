@@ -178,7 +178,7 @@
     justify-content: space-between;
     padding: 35px;
     position: fixed;
-    bottom: 200px;
+    top: 14%;
     left: 23%;
     /*margin: auto;*/
 }
@@ -315,7 +315,7 @@ form input {
 
 .error {
     font-size: 0.8em;
-    color: red;
+    color: #901c1c;
     font-weight: bold;
     display: none;
 }

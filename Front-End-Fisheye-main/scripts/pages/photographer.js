@@ -81,20 +81,11 @@ function photographersMediaFactory(data) {
             const icon = document.createElement("i"); //création d'une icone
             icon.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon.classList.add("fa-heart");
-            icon.setAttribute("id", "like");
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
-            icon2.setAttribute("id", "dislike");
-            icon.setAttribute("onclick", "Dislikes()");
-            icon2.setAttribute("onclick", "Likes()");
-            /*if (onclick == Likes()) {
-                likes = likes++;
-            } else if (onclick == Dislikes()) {
-                likes = likes--;
-            } else {
-                likes = likes;
-            } */
+            icon.onclick = Dislikes;
+            icon2.onclick = Likes;
             titleMedia.appendChild(likesh2);
             titleMedia.appendChild(icon2);
             titleMedia.appendChild(icon);
@@ -110,20 +101,43 @@ function photographersMediaFactory(data) {
     return { getUserMediaCardDOM };
 }
 
-function Likes() {
+function Likes(e) {
     //fonction avec l'affichage du coeur en entier
-    const likes = document.getElementById("like");
-    likes.style.display = "inline";
-    const dislikes = document.getElementById("dislike");
-    dislikes.style.display = "";
+    const icon2 = e.currentTarget;
+    icon2.style.display = "none";
+    const icon = icon2.parentElement.children[2];
+    icon.style.display = "inline";
+    const likesh2 = icon2.parentElement.children[0];
+    const likes = parseInt(likesh2.textContent);
+    likesh2.textContent = likes + 1;
+    const totalLikesAdd = document.getElementById("numberLikes");
+    let likeNull = 0; //Nombre de likes à 0 avant ajout
+    photographerMedia.forEach(function (pmedia) {
+        let likeUnit = Number(pmedia.likes);
+        likeNull += likeUnit;
+    });
+    if ((likesh2.textContent = likes + 1)) {
+        likeNull++;
+    }
+    totalLikesAdd.textContent = likeNull;
 }
 
-function Dislikes() {
+function Dislikes(e) {
     //fonction avec l'affichage du coeur avec la bordure
-    const dislikes = document.getElementById("dislike");
-    dislikes.style.display = "block";
-    const likes = document.getElementById("like");
-    likes.style.display = "";
+    const icon = e.currentTarget;
+    icon.style.display = "none";
+    const icon2 = icon.parentElement.children[1];
+    icon2.style.display = "inline";
+    const likesh2 = icon.parentElement.children[0];
+    const likes = parseInt(likesh2.textContent);
+    likesh2.textContent = likes - 1;
+    const totalLikesAdd = document.getElementById("numberLikes");
+    let likeNull = 0; //Nombre de likes à 0 avant ajout
+    photographerMedia.forEach(function (pmedia) {
+        let likeUnit = Number(pmedia.likes);
+        likeNull += likeUnit;
+    });
+    totalLikesAdd.textContent = likeNull;
 }
 
 function openmodalis(id) {
