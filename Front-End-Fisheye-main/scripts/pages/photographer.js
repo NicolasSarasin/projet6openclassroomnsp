@@ -60,6 +60,7 @@ function photographersMediaFactory(data) {
                 mediaElt = document.createElement("img");
                 mediaElt.src = picture;
                 mediaElt.classList.add("imgArticle");
+                mediaElt.setAttribute("alt", title);
                 article.appendChild(mediaElt);
             } else {
                 mediaElt = document.createElement("video");
@@ -111,15 +112,7 @@ function Likes(e) {
     const likes = parseInt(likesh2.textContent);
     likesh2.textContent = likes + 1;
     const totalLikesAdd = document.getElementById("numberLikes");
-    let likeNull = 0; //Nombre de likes à 0 avant ajout
-    photographerMedia.forEach(function (pmedia) {
-        let likeUnit = Number(pmedia.likes);
-        likeNull += likeUnit;
-    });
-    if ((likesh2.textContent = likes + 1)) {
-        likeNull++;
-    }
-    totalLikesAdd.textContent = likeNull;
+    totalLikesAdd.textContent = Number(totalLikesAdd.textContent) + 1;
 }
 
 function Dislikes(e) {
@@ -132,12 +125,7 @@ function Dislikes(e) {
     const likes = parseInt(likesh2.textContent);
     likesh2.textContent = likes - 1;
     const totalLikesAdd = document.getElementById("numberLikes");
-    let likeNull = 0; //Nombre de likes à 0 avant ajout
-    photographerMedia.forEach(function (pmedia) {
-        let likeUnit = Number(pmedia.likes);
-        likeNull += likeUnit;
-    });
-    totalLikesAdd.textContent = likeNull;
+    totalLikesAdd.textContent = Number(totalLikesAdd.textContent) - 1;
 }
 
 function openmodalis(id) {
