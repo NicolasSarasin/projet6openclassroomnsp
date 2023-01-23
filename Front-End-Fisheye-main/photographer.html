@@ -79,7 +79,10 @@
                 onclick="closemodalis()"
                 class="svgModalis"
             />
-            <i class="fa fa-angle-left" onclick="previous()"></i>
+            <a href="javascript:previous()"
+                ><i class="fa fa-angle-left" id="previous"></i
+            ></a>
+            <!--onclick="previous()"-->
             <img id="modalisImage" class="image" style="display: none" />
             <video
                 id="modalisVideo"
@@ -88,7 +91,10 @@
                 controls
             ></video>
             <p id="modalisTitle"></p>
-            <i class="fa fa-angle-right" onclick="next()"></i>
+            <a href="javascript:next()"
+                ><i class="fa fa-angle-right" id="next"></i
+            ></a>
+            <!--onclick="next()"-->
         </section>
 
         <div id="contact_modal">

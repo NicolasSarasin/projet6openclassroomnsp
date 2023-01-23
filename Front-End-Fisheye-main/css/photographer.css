@@ -80,32 +80,48 @@
     bottom: -22.5px;
 }
 
-.mediaSection article .titleMedia .fa-heart,
-.mediaSection article .titleMedia .fa-heart-o {
+.mediaSection article .titleMedia .buttonVoid2,
+.mediaSection article .titleMedia .buttonVoid {
     cursor: pointer; /*pointeur*/
     position: absolute;
     right: 0px;
     bottom: 2.5px;
 }
 
-.mediaSection .fa-heart {
+.buttonVoid2 .fa-heart,
+.buttonVoid .fa-heart-o {
+    color: #901c1c;
+    font-size: 26px;
+}
+
+.mediaSection .buttonVoid2 {
     display: none;
 }
 
-.imgArticle {
+.mediaSection article div {
+    width: 96%;
+}
+
+.mediaSection article div a .imgArticle {
     height: 300px;
-    width: 96%; /*largeur*/
+    width: 100%; /*largeur*/
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer; /*pointeur*/
 }
 
-.videoArticle {
+.mediaSection article div a .videoArticle {
     height: 300px;
-    width: 96%; /*largeur*/
+    width: 100%; /*largeur*/
     cursor: pointer; /*pointeur*/
     border-radius: 10px;
     object-fit: cover;
+}
+
+.buttonVoid,
+.buttonVoid2 {
+    background-color: transparent;
+    border: none;
 }
 
 .modalis {
@@ -140,13 +156,15 @@
     right: 100px;
 }
 
-.modalis .fa-angle-right {
+.modalis a .fa-angle-right {
+    color: #901c1c;
     position: absolute;
     right: 100px;
     top: 45%;
 }
 
-.modalis .fa-angle-left {
+.modalis a .fa-angle-left {
+    color: #901c1c;
     position: absolute;
     left: 100px;
     top: 45%;

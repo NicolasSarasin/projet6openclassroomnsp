@@ -56,22 +56,26 @@ function photographersMediaFactory(data) {
         if (photographerId) {
             const article = document.createElement("article");
             let mediaElt = null;
+            const a = document.createElement("a");
             if (image != null) {
                 mediaElt = document.createElement("img");
                 mediaElt.src = picture;
                 mediaElt.classList.add("imgArticle");
                 mediaElt.setAttribute("alt", title);
-                article.appendChild(mediaElt);
             } else {
                 mediaElt = document.createElement("video");
                 mediaElt.setAttribute("src", videograme);
                 mediaElt.controls = true;
                 mediaElt.classList.add("videoArticle");
-                article.appendChild(mediaElt);
             }
-            mediaElt.onclick = function () {
+            const div = document.createElement("div");
+            article.appendChild(div);
+            div.appendChild(a);
+            a.appendChild(mediaElt);
+            a.href = "javascript:openmodalis(" + id + ")";
+            /*mediaElt.onclick = function () {
                 openmodalis(id);
-            }; //au click de l'image, affiche un modal pour mettre les images en avant
+            };*/ //au click de l'image, affiche un modal pour mettre les images en avant
 
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
@@ -88,8 +92,14 @@ function photographersMediaFactory(data) {
             icon.onclick = Dislikes;
             icon2.onclick = Likes;
             titleMedia.appendChild(likesh2);
-            titleMedia.appendChild(icon2);
-            titleMedia.appendChild(icon);
+            const icon2Btn = document.createElement("button");
+            icon2Btn.classList.add("buttonVoid");
+            icon2Btn.appendChild(icon2);
+            const iconBtn = document.createElement("button");
+            iconBtn.classList.add("buttonVoid2");
+            iconBtn.appendChild(icon);
+            titleMedia.appendChild(icon2Btn);
+            titleMedia.appendChild(iconBtn);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
             return article;
         }
@@ -104,7 +114,7 @@ function photographersMediaFactory(data) {
 
 function Likes(e) {
     //fonction avec l'affichage du coeur en entier
-    const icon2 = e.currentTarget;
+    const icon2 = e.currentTarget.parentElement;
     icon2.style.display = "none";
     const icon = icon2.parentElement.children[2];
     icon.style.display = "inline";
@@ -117,7 +127,7 @@ function Likes(e) {
 
 function Dislikes(e) {
     //fonction avec l'affichage du coeur avec la bordure
-    const icon = e.currentTarget;
+    const icon = e.currentTarget.parentElement;
     icon.style.display = "none";
     const icon2 = icon.parentElement.children[1];
     icon2.style.display = "inline";
