@@ -9,7 +9,6 @@ async function getData() {
 async function getPhotographers() {
     const photographers = (await getData()).photographers;
     console.log(photographers);
-
     // et bien retourner le tableau photographers seulement une fois
     return [...photographers]; //retourne un tableau des photographes
 }
@@ -23,7 +22,6 @@ async function getPhotographer(id) {
 async function getPhotographersMedia() {
     const media = (await getData()).media;
     console.log(media);
-
     // et bien retourner le tableau media seulement une fois
     return [...media]; //retourne un tableau des médias
 }
@@ -76,7 +74,6 @@ function photographersMediaFactory(data) {
             /*mediaElt.onclick = function () {
                 openmodalis(id);
             };*/ //au click de l'image, affiche un modal pour mettre les images en avant
-
             const titleMedia = document.createElement("h2");
             titleMedia.textContent = title; //titre + nombre de likes
             titleMedia.classList.add("titleMedia");
@@ -89,15 +86,25 @@ function photographersMediaFactory(data) {
             const icon2 = document.createElement("i");
             icon2.classList.add("fa"); //ajout de "class" pour la forme de coeur
             icon2.classList.add("fa-heart-o");
-            icon.onclick = Dislikes;
-            icon2.onclick = Likes;
             titleMedia.appendChild(likesh2);
             const icon2Btn = document.createElement("button");
             icon2Btn.classList.add("buttonVoid");
             icon2Btn.appendChild(icon2);
+            icon2Btn.addEventListener("keydown", (event) => {
+                if (event.code === "Space" || event.code === "Enter") {
+                    icon2Btn.click();
+                }
+            });
             const iconBtn = document.createElement("button");
             iconBtn.classList.add("buttonVoid2");
             iconBtn.appendChild(icon);
+            iconBtn.addEventListener("keydown", (event) => {
+                if (event.code === "Space" || event.code === "Enter") {
+                    iconBtn.click();
+                }
+            });
+            iconBtn.onclick = Dislikes;
+            icon2Btn.onclick = Likes;
             titleMedia.appendChild(icon2Btn);
             titleMedia.appendChild(iconBtn);
             article.appendChild(titleMedia); //lie le titre et le nombre de likes dans l'article d'affichage des médias
@@ -114,7 +121,8 @@ function photographersMediaFactory(data) {
 
 function Likes(e) {
     //fonction avec l'affichage du coeur en entier
-    const icon2 = e.currentTarget.parentElement;
+    //debugger;
+    const icon2 = e.currentTarget;
     icon2.style.display = "none";
     const icon = icon2.parentElement.children[2];
     icon.style.display = "inline";
@@ -127,7 +135,7 @@ function Likes(e) {
 
 function Dislikes(e) {
     //fonction avec l'affichage du coeur avec la bordure
-    const icon = e.currentTarget.parentElement;
+    const icon = e.currentTarget;
     icon.style.display = "none";
     const icon2 = icon.parentElement.children[1];
     icon2.style.display = "inline";
@@ -294,7 +302,6 @@ function sortMedia(option) {
 
 async function init() {
     // Récupère les datas des photographes
-
     photographerMedia = await getPhotgrapherMedia(photographerIdentification);
     //sortMedia("popularity");
     displayPhotographerMedia(photographerMedia);
@@ -310,6 +317,5 @@ function selectOption(option, elt) {
     document.getElementById("selectOptions").classList.add("hidden");
     document.getElementById("selectValue").classList.remove("hidden");
     document.getElementById("selectValue").textContent = elt.innerText;
-
     sortMedia(option);
 }
