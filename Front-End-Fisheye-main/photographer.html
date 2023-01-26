@@ -74,11 +74,9 @@
             <div class="mediaSection"></div>
         </section>
         <section class="modalis">
-            <img
-                src="assets/icons/close2.svg"
-                onclick="closemodalis()"
-                class="svgModalis"
-            />
+            <a href="javascript:closemodalis()"
+                ><img src="assets/icons/close2.svg" class="svgModalis"
+            /></a>
             <a href="javascript:previous()"
                 ><i class="fa fa-angle-left" id="previous"></i
             ></a>
@@ -101,7 +99,9 @@
             <div class="modal">
                 <header>
                     <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                    <a href="javascript:closeModal()"
+                        ><img src="assets/icons/close.svg"
+                    /></a>
                 </header>
                 <form
                     class="modalForm"
