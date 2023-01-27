@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="assets/favicon.png" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <title>Fisheye - photographe</title>
+        <!--titre de l'onglet-->
+    </head>
+    <body>
+        <header>
+            <a href="index.html"
+                ><img
+                    src="assets/images/logo.png"
+                    class="logo"
+                    alt="logo_du_site"
+            /></a>
+        </header>
+        <main id="main">
+            <div class="photograph-header">
+                <div id="photographerInfo" class="photographerInfo"></div>
+                <button class="contact_button" onclick="displayModal()">
+                    Contactez-moi
+                </button>
+                <img
+                    id="photographerPhoto"
+                    class="imgIDphotographersPage"
+                    alt=""
+                />
+            </div>
+        </main>
+        <form action="" class="sort">
+            <label for="">Trier par</label>
+            <!--<div>-->
+            <!--<input type="submit" value="Populatité" />-->
+            <!--<input type="submit" value="Date" />-->
+            <!--<input type="submit" value="Titre" />-->
+            <div
+                id="selectValue"
+                class="selectValue"
+                onclick="showListOptions()"
+            >
+                Popularité<i class="fa fa-angle-up"></i>
+            </div>
+            <div id="selectOptions" class="select hidden">
+                <!--div avec option-->
+                <div
+                    class="popularity"
+                    onclick="selectOption('popularity', this)"
+                >
+                    Popularité
+                </div>
+                <i class="fa fa-angle-up"></i>
+                <div class="date" onclick="selectOption('date', this)">
+                    Date
+                </div>
+                <div class="title" onclick="selectOption('title', this)">
+                    Titre
+                </div>
+            </div>
+            <!--</div> class="popularity" class="title"-->
+        </form>
+        <section>
+            <div class="mediaSection"></div>
+        </section>
+        <section class="modalis">
+            <a href="javascript:closemodalis()"
+                ><img src="assets/icons/close2.svg" class="svgModalis"
+            /></a>
+            <a href="javascript:previous()"
+                ><i class="fa fa-angle-left" id="previous"></i
+            ></a>
+            <!--onclick="previous()"-->
+            <img id="modalisImage" class="image" style="display: none" />
+            <video
+                id="modalisVideo"
+                class="video"
+                style="display: none"
+                controls
+            ></video>
+            <p id="modalisTitle"></p>
+            <a href="javascript:next()"
+                ><i class="fa fa-angle-right" id="next"></i
+            ></a>
+            <!--onclick="next()"-->
+        </section>
+
+        <div id="contact_modal">
+            <div class="modal">
+                <header>
+                    <h2>Contactez-moi</h2>
+                    <a href="javascript:closeModal()"
+                        ><img src="assets/icons/close.svg"
+                    /></a>
+                </header>
+                <form
+                    class="modalForm"
+                    name="messageToPhotographe"
+                    method="post"
+                    onsubmit="return validate()"
+                >
+                    <div>
+                        <label for="first">Prénom</label>
+                        <input
+                            type="text"
+                            id="first"
+                            name="first"
+                            placeholder="Nicolas"
+                        />
+                        <div id="firstNameError" class="error">
+                            Le prénom doit contenir deux caractères
+                        </div>
+                        <label for="last">Nom</label>
+                        <input
+                            type="text"
+                            id="last"
+                            name="last"
+                            placeholder="SARASIN-PONTICO"
+                        />
+                        <div id="lastNameError" class="error">
+                            Le nom doit contenir deux caractères
+                        </div>
+                        <label for="email">Mail</label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="exemple.test@gmail.com"
+                        />
+                        <div id="emailError" class="error">
+                            Le mail doit contenir deux caractères
+                        </div>
+                        <label for="message">Votre message</label>
+                        <input type="text" id="message" name="message" />
+                        <div id="messageError" class="error">
+                            Le message ne doit pas être vide pour l'envoyer au
+                            photograhe en qestion
+                        </div>
+                    </div>
+                    <button class="contact_button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+        <section class="LikesPrice">
+            <h2 id="numberLikes" class="numberLikes"></h2>
+            <i class="fa fa-heart"></i>
+            <h2 id="numberPrice"></h2>
+            <!--titre/prix-->
+        </section>
+        <script src="scripts/pages/photographer.js"></script>
+        <script src="scripts/utils/contactForm.js"></script>
+    </body>
+</html>
